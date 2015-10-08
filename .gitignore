@@ -1,0 +1,13 @@
+# Temporary files
+*.pyc
+*~
+
+# Data that might be subject to licensing restrictions
+data/restricted
+
+# Data that is just too dang big
+data/kowiki
+data/kowiki_index.tsv
+
+# Dependencies
+wikiextractor

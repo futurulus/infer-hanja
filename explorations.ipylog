@@ -1,0 +1,273 @@
+# coding: utf-8
+import xml.etree.cElementTree as et
+help(et)
+with open('data/ko-zh_CN.xml', 'r') as infile:
+    t = et(infile.read())
+help(et)
+help(et.XMLParser)
+with open('data/ko-zh_CN.xml', 'r') as infile:
+    t = et.parse(infile.read)
+with open('data/ko-zh_CN.xml', 'r') as infile:
+    t = et.parse(infile.read())
+
+t.getroot()
+t
+et.parse('''<?xml version="1.0"?>
+<data></data>''')
+et.parse('ko-zh_CN.xml')
+t = _
+t
+help(t)
+t.iter()
+for k in t.iter():
+    print k
+
+help(next(t.iter()))
+help(next(t.iter()))
+dict(next(t.iter()))
+for child in t:
+    	print child.tag, child.attrib
+
+for child in t.getroot():
+    	print child.tag, child.attrib
+
+for child in t.getroot():
+    	print child.tag, child.attrib, child.text
+
+l = next(iter(t.getroot()))
+for child in l:
+    	print child.tag, child.attrib, child.text
+
+#with open('data/KDE4.ko-zh_CN.ko', 'r') as ko, open('data/KDE4.ko-zh_CN.zh_CN', 'r') as zh:
+dataset = []
+with open('data/KDE4.ko-zh_CN.ko', 'r') as ko, open('data/KDE4.ko-zh_CN.zh_CN', 'r') as zh:
+    dataset = zip(ko, zh)
+
+len(dataset)
+from random import sample
+for ko, cn in sample(dataset, 20):
+    print ko
+    print cn
+
+for ko, cn in sample(dataset, 20):
+    print ko.strip()
+    print cn.strip()
+    print
+
+for ko, cn in sample(dataset, 20):
+    print ko.strip()
+    print cn.strip()
+    print
+
+s = u'DCOP ì¸í°íì´ì¤'
+s
+s.decode()
+import chardet
+help(chardet)
+chardet.detect(s)
+s = 'DCOP ì¸í°íì´ì¤
+s = 'DCOP ì¸í°íì´ì¤'
+chardet.detect(s)
+s = bytes('DCOP ì¸í°íì´ì¤')
+chardet.detect(s)
+s.decode('euc-kr')
+s.decode('cp949')
+print s.decode('cp949')
+print s.decode('iso2022_jp_2')
+print s.decode('iso2022_kr')
+print s.decode('johab')
+print s.decode('utf_7')
+s
+print s.decode('utf-8')
+s[5:]
+s[5:].decode('utf-16')
+print s[5:].decode('utf-16')
+print s[5:].decode('utf-8')
+print s[5:]
+print s[5:].encode('utf-8')
+print s[5:].decode('utf-8').decode('utf-8')
+print u'\uc3ac\uc29d\uc2b8\uc3ad'
+print u'\uac\u9d\ub8\uad'
+print u'\xac\x9d\xb8\xad'
+print s[5:].decode('latin-1')
+print s[5:].encode('latin-1')
+print s[5:].decode('utf-8').encode('latin-1')
+s[5:].decode('utf-8').encode('latin-1')
+chardet.detect(s[5:].decode('utf-8').encode('latin-1'))
+s.decode('utf-8').encode('latin-1')
+print s.decode('utf-8').encode('latin-1')
+len(dataset)
+print s.decode('utf-8').encode('latin-1').decode('utf-8')
+s.decode('utf-8').encode('latin-1').decode('utf-8')
+dataset[0]
+print dataset[0]
+print dataset[0][0]
+print dataset[0][0].decode('utf-8')
+orig = dataset
+dataset = [k.decode('utf-8'), c.decode('utf-8') for k, c in dataset]
+dataset = [(k.decode('utf-8'), c.decode('utf-8')) for k, c in dataset]
+dataset[0]
+s
+s = s.decode('utf-8')
+s
+print s
+def score(x): return len([c for c in x if 0xac00 <= ord(c) <= 0xd7af or 0x1100 <= ord(c) <= 0x11ff])
+score(s)
+score(s.decode('latin-1').encode('utf-8')
+)
+score(s.encode('latin-1').decode('utf-8')
+)
+s.encode('latin-1').decode('utf-8')
+score(dataset[0][0].encode('latin-1').decode('utf-8'))
+def fix(s):
+    try:
+        mangled = s.encode('latin-1').decode('utf-8')
+        if score(mangled) > score(s):
+            return mangled
+        else:
+            return s
+    except UnicodeDecodeError:
+        return s
+
+s
+fix(s)
+fix(dataset[0][0])
+def fix(s):
+    try:
+        mangled = s.encode('latin-1').decode('utf-8')
+        if score(mangled) > score(s):
+            return mangled
+        else:
+            return s
+    except UnicodeEncodeError:
+        return s
+    except UnicodeDecodeError:
+        return s
+
+fix(dataset[0][0])
+fix(s)
+dataset = [fix(k), fix(c) for k, c in dataset]
+dataset = [(fix(k), fix(c)) for k, c in dataset]
+import cPickle as cp
+with open('data/dataset.p', 'wb') as outfile:
+    cp.dump(dataset, outfile)
+
+for k, c in sample(dataset, 20):
+    print k.strip()
+    print c.strip()
+    print
+best = sorted(dataset, key=lambda p: score(p[0]))
+best[:10]
+best[-10:]
+for k, c in best[-20:]:
+    print k.strip()
+    print c.strip()
+    print
+
+from itertools import groupby as g
+for key, group in g(best, key=lambda p: score(p[0])):
+    print key, len(group)
+
+for key, group in g(best, key=lambda p: score(p[0])):
+    print key, len(list(group))
+
+dataset = [p for p in dataset if score(p[0]) != 0]
+len(dataset)
+with open('data/dataset.p', 'wb') as outfile:
+    cp.dump(dataset, outfile)
+
+from cjklib import characterlookup
+help(characterlookup.CharacterLookup)
+cjk = characterlookup.CharacterLookup('C')
+cjk.getCharactersForReading(s[-1], 'Hangul')
+s[-1]
+print s[-1]
+cjk.getCharactersForReading(fix(s)[-1], 'Hangul')
+fix(s)[-1]
+print fix(s)[-1]
+cjk.getCharactersForReading(fix(s)[-2], 'Hangul')
+print fix(s)[-2]
+nsylls = 0
+nplaus = 0
+for k, c in dataset:
+    for s in k:
+        if score(s) == 0: continue
+        nsylls += 1
+        for h in cjk.getCharactersForReading(s, 'Hangul'):
+            if h in c: nplaus += 1
+
+def memoize(f):
+        memo = {}
+        def helper(x):
+                if x not in memo:
+                        memo[x] = f(x)
+                    return memo[x]
+            return helper
+
+def memoize(f):
+        memo = {}
+        def helper(x):
+                if x not in memo:
+                        memo[x] = f(x)
+                return memo[x]
+        return helper
+
+@memoize
+def lookup(syll):
+    return cjk.getCharactersForReading(syll, 'Hangul')
+nsyll = 0; nplaus = 0; n1plaus = 0
+for k, c in dataset:
+        for s in k:
+                if score(s) == 0: continue
+                nsylls += 1; plaus = False
+                for h in lookup(s):
+                        if h in c:
+                                nplaus += 1
+                                plaus = True
+                            if plaus: n1plaus += 1
+
+for k, c in dataset:
+        for s in k:
+                if score(s) == 0: continue
+                nsylls += 1; plaus = False
+                for h in lookup(s):
+                        if h in c:
+                                nplaus += 1
+                                plaus = True
+                        if plaus: n1plaus += 1
+
+nsyll
+nsylls
+nplaus
+n1plaus
+get_ipython().magic(u'paste')
+del nsyll
+get_ipython().magic(u'paste')
+nsylls
+nplaus
+n1plaus
+from collections import Counter
+nsylls = 0; nplaus = 0; n1plaus = 0
+cooc = Counter()
+get_ipython().magic(u'paste')
+get_ipython().magic(u'paste')
+get_ipython().magic(u'paste')
+cooc.most_common()
+for ((s, h), count) in reversed(cooc.most_common()):
+    print u'%d %s -> %s' % (count, s, h)
+
+div = Counter([s for ((s, h), count) in cooc.most_common()])
+div.most_common()
+for syll, count in div.most_common():
+      print '%d %s' % syll, count
+
+for syll, count in div.most_common():
+      print '%d %s' % count, syll
+
+for syll, count in div.most_common():
+      print '%d %s' % (count, syll)
+
+len(div)
+len(cooc)
+get_ipython().magic(u'help save')
+get_ipython().magic(u'save explorations 1-159')
