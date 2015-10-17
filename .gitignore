@@ -11,3 +11,5 @@ data/kowiki_index.tsv
 
 # Dependencies
 wikiextractor
+libhanja
+hanja

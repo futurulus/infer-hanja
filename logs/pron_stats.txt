@@ -1,0 +1,23 @@
+before changes: 159 (95.63%), 288/359 perfect (80.22%)
+after changes: 131 (96.40%), 309/359 perfect (86.07%)
+space only: 125 (96.57%), 315/359 perfect (87.74%)
+non-alnum only: 123 (96.62%), 317/359 perfect (88.30%)
+異 fix: 119 (96.73%), 320/359 perfect (89.14%)
+
+>>> u'金'
+u'\u91d1'
+>>> u'금'
+u'\uae08'
+>>> u'김'
+u'\uae40'
+>>> u'異'
+u'\u7570'
+>>> u'이'
+u'\uc774'
+>>> u'리'
+u'\ub9ac'
+
+bad gold  ........
+initial   ...
+difficult ......................
+bad char? ....
