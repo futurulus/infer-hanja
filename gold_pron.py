@@ -1,7 +1,7 @@
 # coding: utf-8
 import regex as re
-from utils import uopen, uprint
 
+from utils import uopen, uprint
 import index_wiki
 from index_wiki import load_document
 from kde import all_hangul
@@ -99,11 +99,35 @@ def element_of(collection, elem):
     return elem in collection
 
 
-def find_unique(needle, haystack, match_fn):
+MULTIPLE = ['MULTIPLE']
+
+def find_unique(needle, haystack, match_fn=None):
+    '''
+    >>> find_unique(2, [1, 2, 3, 4])
+    2
+    >>> print find_unique(2, [1, 2, 2, 4])
+    None
+    >>> def match_fn(targets, candidate):
+    ...     count = targets.count(candidate.upper())
+    ...     if count > 1:
+    ...         return MULTIPLE
+    ...     else:
+    ...         return count == 1
+    >>> find_unique(['SEE', 'BE'], ['go', 'do', 'be', 'have'],
+    ...             match_fn=match_fn)
+    'be'
+    >>> print find_unique(['SEE', 'BE', 'DO'], ['go', 'do', 'be', 'have'],
+    ...                   match_fn=match_fn)
+    None
+    '''
+    if match_fn is None:
+        match_fn = (lambda needle, straw: needle == straw)
+
     found = None
     for straw in haystack:
-        if match_fn(needle, straw):
-            if found is None:
+        match = match_fn(needle, straw)
+        if match:
+            if found is None and match is not MULTIPLE:
                 found = straw
             else:
                 return None
@@ -172,6 +196,10 @@ def is_match(hanja, hangul, strict=False):
         return bool(re.match(pattern, hangul))
 
 
+def is_reverse_match(hangul, hanja):
+    return is_match(hanja, hangul)
+
+
 def is_strict_match(hanja, hangul):
     '''
     Convenience function for use with find_unique. Same as
@@ -194,11 +222,17 @@ def all_pronunciations(hanja):
 def find_document_match(hanja_title):
     return find_unique(set(index_wiki.load_index()),
                        all_pronunciations(hanja_title),
-                       element_of)
+                       match_fn=element_of)
+
+
+def find_reverse_match(hangul_sentence, hanja_sentences):
+    return find_unique(hangul_sentence, hanja_sentences,
+                       match_fn=is_reverse_match)
 
 
 def find_sentence_match(hanja_sentence, hangul_sentences):
-    return find_unique(hanja_sentence, hangul_sentences, is_match)
+    return find_unique(hanja_sentence, hangul_sentences,
+                       match_fn=is_match)
 
 
 if __name__ == '__main__':
@@ -210,12 +244,14 @@ if __name__ == '__main__':
             if hangul_title:
                 uprint('%s\t%s' % (hanja_title, hangul_title))
                 hangul_doc = load_document(hangul_title)
-                for hanja_sentence in sentence_split(hanja_doc):
-                    hangul_sentences = sentence_split(hangul_doc)
+                hanja_sentences = list(sentence_split(hanja_doc))
+                hangul_sentences = list(sentence_split(hangul_doc))
+                for hanja_sentence in hanja_sentences:
                     hangul_sentence = find_sentence_match(hanja_sentence, hangul_sentences)
                     hanja_sentence = strip_parens(hanja_sentence)
                     if hangul_sentence and re.search(ur'\p{CJK}', hanja_sentence, re.UNICODE) \
-                                       and re.search(ur'\p{Hangul}', hanja_sentence, re.UNICODE):
+                                       and re.search(ur'\p{Hangul}.*\p{Hangul}', hanja_sentence, re.UNICODE) \
+                                       and find_reverse_match(hangul_sentence, hanja_sentences):
                         hangul_sentence = strip_parens(hangul_sentence)
                         hanjaout.write(hanja_sentence + '\n')
                         hangulout.write(hangul_sentence + '\n')
