@@ -40,6 +40,8 @@ def libhanja_pron(input_seq):
 
 
 COLORS = ['black', 'red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'white']
+
+
 def wrap_color(s, color):
     code = COLORS.index(color)
     if code == -1:
@@ -96,7 +98,7 @@ def evaluate(predict_fn, devtest, visualize=False):
 
 if __name__ == '__main__':
     with uopen('data/gold_pron_dataset.hanja', 'r') as hanja, \
-         uopen('data/gold_pron_dataset.hangul', 'r') as hangul:
+            uopen('data/gold_pron_dataset.hangul', 'r') as hangul:
         test_set = zip(hanja, hangul)
 
     possible_errors, possible_perfect, examples = evaluate(no_conversion, test_set)
@@ -122,4 +124,5 @@ if __name__ == '__main__':
           (haeng_errors, haeng_error_reduction, haeng_perfect, examples, pct_haeng_perfect))
     print(('libhanja pronunciation: %d errors (%f%% reduction), ' +
            '%d perfect of %d examples (%f%%)') %
-          (libhanja_errors, libhanja_error_reduction, libhanja_perfect, examples, pct_libhanja_perfect))
+          (libhanja_errors, libhanja_error_reduction, libhanja_perfect,
+           examples, pct_libhanja_perfect))

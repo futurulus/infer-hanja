@@ -7,6 +7,7 @@ from utils import uopen, uprint
 KOWIKI_GLOB = 'data/kowiki/*/*'
 INDEX_FILE = 'data/kowiki_index.tsv'
 
+
 def index_file(infile):
     u'''
     >>> from StringIO import StringIO
@@ -31,9 +32,12 @@ def index_file(infile):
 
 
 INDEX = None
+
+
 def load_index():
     global INDEX
-    if INDEX is not None: return INDEX
+    if INDEX is not None:
+        return INDEX
 
     INDEX = {}
     with uopen(INDEX_FILE, 'r') as infile:
@@ -52,7 +56,8 @@ def load_document(title):
         infile.seek(seekpos, 0)
         for line in iter(infile.readline, ''):
             line = line.decode('utf-8')
-            if line.strip() == '</doc>': break
+            if line.strip() == '</doc>':
+                break
             collected.append(line)
     return ''.join(collected)
 

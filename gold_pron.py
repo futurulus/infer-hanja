@@ -101,6 +101,7 @@ def element_of(collection, elem):
 
 MULTIPLE = ['MULTIPLE']
 
+
 def find_unique(needle, haystack, match_fn=None):
     '''
     >>> find_unique(2, [1, 2, 3, 4])
@@ -184,7 +185,8 @@ def is_match(hanja, hangul, strict=False):
     hangul = strip_parens(hangul)
 
     if strict:
-        if len(hanja) != len(hangul): return False
+        if len(hanja) != len(hangul):
+            return False
         for cj, cg in zip(hanja, hangul):
             if cj != cg and cg not in all_hangul(cj):
                 return False
@@ -237,8 +239,8 @@ def find_sentence_match(hanja_sentence, hangul_sentences):
 
 if __name__ == '__main__':
     with uopen(KOKORE, 'r') as hanjain, \
-         uopen(OUT_PREFIX + '.hanja', 'w') as hanjaout, \
-         uopen(OUT_PREFIX + '.hangul', 'w') as hangulout:
+            uopen(OUT_PREFIX + '.hanja', 'w') as hanjaout, \
+            uopen(OUT_PREFIX + '.hangul', 'w') as hangulout:
         for hanja_title, hanja_doc in all_documents(hanjain):
             hangul_title = find_document_match(hanja_title)
             if hangul_title:
@@ -250,8 +252,8 @@ if __name__ == '__main__':
                     hangul_sentence = find_sentence_match(hanja_sentence, hangul_sentences)
                     hanja_sentence = strip_parens(hanja_sentence)
                     if hangul_sentence and re.search(ur'\p{CJK}', hanja_sentence, re.UNICODE) \
-                                       and re.search(ur'\p{Hangul}.*\p{Hangul}', hanja_sentence, re.UNICODE) \
-                                       and find_reverse_match(hangul_sentence, hanja_sentences):
+                            and re.search(ur'\p{Hangul}.*\p{Hangul}', hanja_sentence, re.UNICODE) \
+                            and find_reverse_match(hangul_sentence, hanja_sentences):
                         hangul_sentence = strip_parens(hangul_sentence)
                         hanjaout.write(hanja_sentence + '\n')
                         hangulout.write(hangul_sentence + '\n')
