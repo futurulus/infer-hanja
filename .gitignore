@@ -13,3 +13,6 @@ data/kowiki_index.tsv
 wikiextractor
 libhanja
 hanja
+
+# Local scripts
+activate
