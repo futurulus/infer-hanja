@@ -32,6 +32,7 @@ def index_file(infile):
 
 
 INDEX = None
+TITLES = []
 
 
 def load_index():
@@ -44,6 +45,7 @@ def load_index():
         for line in infile:
             filename, seekpos, title = line.strip().split('\t')
             INDEX[title] = (filename, int(seekpos))
+            TITLES.append(title)
 
     return INDEX
 
@@ -64,7 +66,7 @@ def load_document(title):
 
 def all_titles():
     load_index()
-    return sorted(INDEX.keys())
+    return TITLES
 
 
 if __name__ == '__main__':
