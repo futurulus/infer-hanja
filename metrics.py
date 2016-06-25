@@ -29,7 +29,7 @@ def char_errors(eval_data, predictions, scores='ignored', learner='ignored'):
     reported per sentence. Aggregate by sum.
     '''
     golds = [inst.output for inst in eval_data]
-    return [ref_len for edits, ref_len in cer_tuples(golds, predictions)]
+    return [edits for edits, ref_len in cer_tuples(golds, predictions)]
 
 
 def sent_errors(eval_data, predictions, scores='ignored', learner='ignored'):
@@ -38,10 +38,10 @@ def sent_errors(eval_data, predictions, scores='ignored', learner='ignored'):
     perfectly, 1 otherwise. Aggregate by sum or mean.
     '''
     golds = [inst.output for inst in eval_data]
-    return [int(ref_len != 0) for edits, ref_len in cer_tuples(golds, predictions)]
+    return [int(edits != 0) for edits, ref_len in cer_tuples(golds, predictions)]
 
 
-def ref_lens(eval_data, predictions='ignored', scores='ignored', learner='ignored'):
+def ref_lens(eval_data, predictions, scores='ignored', learner='ignored'):
     '''
     Total reference length: number of characters in the gold. A diagnostic metric;
     does not change with model output. Aggregate by sum or mean.
