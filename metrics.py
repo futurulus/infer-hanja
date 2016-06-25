@@ -7,7 +7,7 @@ def cer_tuples(golds, predictions):
     for gold, pred in zip(golds, predictions):
         gold = gold.strip()
         pred = pred.strip()
-        editops = lev.editops(gold, pred)
+        editops = lev.editops(unicode(gold), unicode(pred))
         tuples.append((len(editops), len(gold)))
     return tuples
 
