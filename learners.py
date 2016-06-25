@@ -4,6 +4,8 @@ import numpy as np
 from stanza.monitoring import progress
 from stanza.research.learner import Learner
 
+import classifier
+
 
 def new(key):
     '''
@@ -91,4 +93,5 @@ class MostCommonLearner(Learner):
 LEARNERS = {
     'Identity': IdentityLearner,
     'MostCommon': MostCommonLearner,
+    'Classifier': classifier.ClassifierLearner,
 }
