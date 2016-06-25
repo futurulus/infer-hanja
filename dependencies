@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
 pip install python-Levenshtein regex cjklib
+ln -s libhanja/hanja hanja
