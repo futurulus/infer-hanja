@@ -106,9 +106,14 @@ def prev_feature(input, idx):
     return {'prev': input[max(0, idx - 1):idx]}
 
 
+def sent_boc_feature(input, idx):
+    return {u'sent:' + c: 1 for i, c in enumerate(input) if i != idx}
+
+
 FEATURES = {
     'next': next_feature,
     'prev': prev_feature,
+    'sent_boc': sent_boc_feature,
 }
 
 parser = config.get_options_parser()
