@@ -16,3 +16,6 @@ hanja
 
 # Local scripts
 activate
+
+# Output directories
+runs/
