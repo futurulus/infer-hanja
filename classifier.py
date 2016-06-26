@@ -99,7 +99,7 @@ class ClassifierLearner(Learner):
     def data_to_arrays(self, insts):
         options = config.options()
 
-        worker_pool = multiprocessing.Pool(8)
+        worker_pool = multiprocessing.Pool(options.featurization_threads)
 
         features = defaultdict(list)
         labels = defaultdict(list)
@@ -179,3 +179,5 @@ FEATURES = {
 parser = config.get_options_parser()
 parser.add_argument('--features', nargs='*', choices=FEATURES.keys(),
                     help='Feature set to use for ClassifierLearner')
+parser.add_argument('--featurization_threads', type=int, default=8,
+                    help='Number of processes to use for multiprocessing-based featurization')
