@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-pip install python-Levenshtein regex cjklib
+pip install python-Levenshtein regex cjklib unicodecsv
 ln -s libhanja/hanja hanja
