@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from collections import defaultdict
 import multiprocessing
 import numpy as np
@@ -150,12 +151,17 @@ def sent_boc_features(input, idx, hanjas):
 
 
 def dict_features(input, idx, hanjas):
+    u'''
+    >>> dict_features(u'갈비탕', 2, [u'탕', u'\\u6e6f'])  # 湯
+    {u'dictentry3': u'\\u6e6f'}
+    '''
     feats = {}
     for hanja in hanjas:
         for entry in kengdict.entries_for_hanja(hanja):
             for pos in find_all(entry.hanja, hanja):
                 if input[idx - pos:idx - pos + len(entry.hangul)] == entry.hangul:
                     feats[u'dictentry%s' % len(entry.hangul)] = hanja
+                    break
     return feats
 
 

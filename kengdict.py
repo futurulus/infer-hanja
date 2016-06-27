@@ -3,7 +3,7 @@ import sys
 import unicodecsv as csv
 from collections import namedtuple, defaultdict
 
-Entry = namedtuple('Entry', ['hanja', 'hangul', 'english'])
+Entry = namedtuple('Entry', ['hangul', 'hanja', 'english'])
 
 
 class KEngDict(object):
