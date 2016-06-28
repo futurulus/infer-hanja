@@ -8,6 +8,7 @@ You'll need Python 2 with scikit-learn (and therefore numpy, scipy, and ctypes)
 installed. Anaconda is highly recommended.
 
 ::
+
     $ ./dependencies
 
 Usage
