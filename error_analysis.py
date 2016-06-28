@@ -14,6 +14,8 @@ from libhanja_eval import print_visualization
 parser = config.get_options_parser()
 parser.add_argument('--max_examples', type=int, default=100,
                     help='The maximum number of examples to display in error analysis.')
+parser.add_argument('--html', type=config.boolean, default=False,
+                    help='If true, output errors in HTML.')
 
 Output = namedtuple('Output', 'config,results,data,scores,predictions')
 
@@ -28,10 +30,16 @@ def print_error_analysis():
         indices = np.random.choice(np.arange(len(errors)), size=options.max_examples, replace=False)
     else:
         indices = range(len(errors))
+
+    if options.html:
+        print('<!DOCTYPE html>')
+        print('<html><head><title>Error analysis</title><meta charset="utf-8" /></head><body>')
     for i in indices:
         inp, pred, gold = [unicode(s).strip() for s in errors[i]]
         editops = lev.editops(gold, pred)
-        print_visualization(inp, pred, gold, editops)
+        print_visualization(inp, pred, gold, editops, html=options.html)
+    if options.html:
+        print('</body></html>')
 
 
 def get_output(run_dir, split):

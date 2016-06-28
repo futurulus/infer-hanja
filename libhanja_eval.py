@@ -40,17 +40,28 @@ def libhanja_pron(input_seq):
 
 
 COLORS = ['black', 'red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'white']
+HTML = ['Black', 'DarkRed', 'DarkGreen', 'Olive', 'Blue', 'Purple', 'DarkCyan', 'White']
 
 
-def wrap_color(s, color):
+def wrap_color_html(s, color):
+    code = COLORS.index(color)
+    if code == -1:
+        html_color = color
+    else:
+        html_color = HTML[code]
+    return '<span style="color:%s;font-weight:bold">%s</span>' % (html_color, s)
+
+
+def wrap_color_shell(s, color):
     code = COLORS.index(color)
     if code == -1:
         raise ValueError('unrecognized color: ' + color)
     return '\033[1;3%dm%s\033[0m' % (code, s)
 
 
-def highlight(text, positions, color):
+def highlight(text, positions, color, html=False):
     chars = []
+    wrap_color = wrap_color_html if html else wrap_color_shell
     for i, c in enumerate(text):
         if i in positions:
             chars.append(wrap_color(c, color))
@@ -60,20 +71,28 @@ def highlight(text, positions, color):
 
 
 def print_visualization(input_seq, pred_output_seq,
-                        gold_output_seq, editops):
+                        gold_output_seq, editops, html=False):
     gold_highlights = []
     pred_highlights = []
     for optype, gold_idx, pred_idx in editops:
         gold_highlights.append(gold_idx)
         pred_highlights.append(pred_idx)
 
-    input_seq = highlight(input_seq, pred_highlights, 'cyan')
-    pred_output_seq = highlight(pred_output_seq, pred_highlights, 'red')
-    gold_output_seq = highlight(gold_output_seq, gold_highlights, 'yellow')
-    uprint(input_seq)
-    uprint(pred_output_seq)
+    input_seq = highlight(input_seq, pred_highlights, 'cyan', html=html)
+    pred_output_seq = highlight(pred_output_seq, pred_highlights, 'red', html=html)
+    gold_output_seq = highlight(gold_output_seq, gold_highlights, 'yellow', html=html)
+
+    if html:
+        print('<p>')
+        br = u' <br />'
+    else:
+        br = u''
+    uprint(input_seq + br)
+    uprint(pred_output_seq + br)
     uprint(gold_output_seq)
-    uprint('')
+    if html:
+        print('</p>')
+    print('')
 
 
 def evaluate(predict_fn, devtest, visualize=False):

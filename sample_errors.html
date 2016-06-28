@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html><head><title>Error analysis</title><meta charset="utf-8" /></head><body>
+
+<p>
+A sample of 100 sentences from the <a href="http://kore.wikia.com/wiki/%EB%8C%80%EB%AC%B8">Hanja Wiki</a> that are inferred incorrectly by a simple per-syllable classifier model. The features used in the model consist only of indicators for the previous and next characters in the sentence (cross-product with the output hanja).
+</p>
+
+<p>
+The lines of each sample are in the order: <br />
+<span style="color:DarkCyan;font-weight:bold">Input</span> <br />
+<span style="color:DarkRed;font-weight:bold">Prediction</span> <br />
+<span style="color:Olive;font-weight:bold">Gold</span>
+</p>
+
+<p>
+거기에는 「사람은 언제 사람이 되는 것인가」라고 하는 근본적인 생명륜<span style="color:DarkCyan;font-weight:bold">리</span>의 문제가 가로 놓여 있다. <br />
+거기에는 「사람은 언제 사람이 되는 것인가」라고 하는 根本的인 生命倫<span style="color:DarkRed;font-weight:bold">리</span>의 問題가 가로 놓여 있다. <br />
+거기에는 「사람은 언제 사람이 되는 것인가」라고 하는 根本的인 生命倫<span style="color:Olive;font-weight:bold">理</span>의 問題가 가로 놓여 있다.
+</p>
+
+<p>
+동시에 대만대학교<span style="color:DarkCyan;font-weight:bold">조</span>교수를 겸임했다. <br />
+同時에 臺灣大學校<span style="color:DarkRed;font-weight:bold">條</span>敎授를 兼任했다. <br />
+同時에 臺灣大學校<span style="color:Olive;font-weight:bold">助</span>敎授를 兼任했다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">곤</span><span style="color:DarkCyan;font-weight:bold">충</span>은, <span style="color:DarkCyan;font-weight:bold">유</span><span style="color:DarkCyan;font-weight:bold">충</span>이나 성<span style="color:DarkCyan;font-weight:bold">충</span>은 <span style="color:DarkCyan;font-weight:bold">요</span><span style="color:DarkCyan;font-weight:bold">산</span> 또는 <span style="color:DarkCyan;font-weight:bold">요</span><span style="color:DarkCyan;font-weight:bold">산</span>의 분<span style="color:DarkCyan;font-weight:bold">해</span>물인 아란트<span style="color:DarkCyan;font-weight:bold">인</span>으로 <span style="color:DarkCyan;font-weight:bold">배</span><span style="color:DarkCyan;font-weight:bold">설</span>해, 폐쇄계가 되는 용<span style="color:DarkCyan;font-weight:bold">기</span>에는 <span style="color:DarkCyan;font-weight:bold">요</span><span style="color:DarkCyan;font-weight:bold">산</span>으로 <span style="color:DarkCyan;font-weight:bold">배</span><span style="color:DarkCyan;font-weight:bold">설</span>한다. <br />
+<span style="color:DarkRed;font-weight:bold">곤</span><span style="color:DarkRed;font-weight:bold">充</span>은, <span style="color:DarkRed;font-weight:bold">유</span><span style="color:DarkRed;font-weight:bold">충</span>이나 成<span style="color:DarkRed;font-weight:bold">充</span>은 <span style="color:DarkRed;font-weight:bold">要</span><span style="color:DarkRed;font-weight:bold">山</span> 또는 <span style="color:DarkRed;font-weight:bold">要</span><span style="color:DarkRed;font-weight:bold">山</span>의 分<span style="color:DarkRed;font-weight:bold">해</span>物인 아란트<span style="color:DarkRed;font-weight:bold">人</span>으로 <span style="color:DarkRed;font-weight:bold">배</span><span style="color:DarkRed;font-weight:bold">說</span>해, 閉鎖系가 되는 容<span style="color:DarkRed;font-weight:bold">기</span>에는 <span style="color:DarkRed;font-weight:bold">要</span><span style="color:DarkRed;font-weight:bold">山</span>으로 <span style="color:DarkRed;font-weight:bold">배</span><span style="color:DarkRed;font-weight:bold">설</span>한다. <br />
+<span style="color:Olive;font-weight:bold">昆</span><span style="color:Olive;font-weight:bold">蟲</span>은, <span style="color:Olive;font-weight:bold">幼</span><span style="color:Olive;font-weight:bold">蟲</span>이나 成<span style="color:Olive;font-weight:bold">蟲</span>은 <span style="color:Olive;font-weight:bold">尿</span><span style="color:Olive;font-weight:bold">酸</span> 또는 <span style="color:Olive;font-weight:bold">尿</span><span style="color:Olive;font-weight:bold">酸</span>의 分<span style="color:Olive;font-weight:bold">解</span>物인 아란트<span style="color:Olive;font-weight:bold">인</span>으로 <span style="color:Olive;font-weight:bold">排</span><span style="color:Olive;font-weight:bold">泄</span>해, 閉鎖系가 되는 容<span style="color:Olive;font-weight:bold">器</span>에는 <span style="color:Olive;font-weight:bold">尿</span><span style="color:Olive;font-weight:bold">酸</span>으로 <span style="color:Olive;font-weight:bold">排</span><span style="color:Olive;font-weight:bold">泄</span>한다.
+</p>
+
+<p>
+1984<span style="color:DarkCyan;font-weight:bold">년</span>(소<span style="color:DarkCyan;font-weight:bold">화</span> 59년) – 제2차 중<span style="color:DarkCyan;font-weight:bold">증</span><span style="color:DarkCyan;font-weight:bold">근</span><span style="color:DarkCyan;font-weight:bold">내</span>각 제 1차 개조<span style="color:DarkCyan;font-weight:bold">내</span>각발족. <br />
+1984<span style="color:DarkRed;font-weight:bold">년</span>(昭<span style="color:DarkRed;font-weight:bold">화</span> 59年) – 第2次 中<span style="color:DarkRed;font-weight:bold">證</span><span style="color:DarkRed;font-weight:bold">近</span><span style="color:DarkRed;font-weight:bold">内</span>閣 第 1次 改造<span style="color:DarkRed;font-weight:bold">内</span>閣發足. <br />
+1984<span style="color:Olive;font-weight:bold">年</span>(昭<span style="color:Olive;font-weight:bold">和</span> 59年) – 第2次 中<span style="color:Olive;font-weight:bold">曽</span><span style="color:Olive;font-weight:bold">根</span><span style="color:Olive;font-weight:bold">內</span>閣 第 1次 改造<span style="color:Olive;font-weight:bold">內</span>閣發足.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">정</span>맥은 <span style="color:DarkCyan;font-weight:bold">피</span><span style="color:DarkCyan;font-weight:bold">부</span>로부터의 위치에 달려 있어 구두인가에 분<span style="color:DarkCyan;font-weight:bold">류</span>되고 있다. <br />
+<span style="color:DarkRed;font-weight:bold">政</span>脈은 <span style="color:DarkRed;font-weight:bold">피</span><span style="color:DarkRed;font-weight:bold">부</span>로부터의 位置에 달려 있어 구두인가에 分<span style="color:DarkRed;font-weight:bold">類</span>되고 있다. <br />
+<span style="color:Olive;font-weight:bold">靜</span>脈은 <span style="color:Olive;font-weight:bold">皮</span><span style="color:Olive;font-weight:bold">膚</span>로부터의 位置에 달려 있어 구두인가에 分<span style="color:Olive;font-weight:bold">流</span>되고 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">타</span><span style="color:DarkCyan;font-weight:bold">원</span>면<span style="color:DarkCyan;font-weight:bold">경</span>에서는, 다른 한쪽의 초점을 다닌 후에 <span style="color:DarkCyan;font-weight:bold">경</span>면에서 반<span style="color:DarkCyan;font-weight:bold">사</span>된 <span style="color:DarkCyan;font-weight:bold">광</span>선은, 벌써 다른 한쪽의 초점을 통<span style="color:DarkCyan;font-weight:bold">과</span>한다. <br />
+<span style="color:DarkRed;font-weight:bold">타</span><span style="color:DarkRed;font-weight:bold">原</span>面<span style="color:DarkRed;font-weight:bold">경</span>에서는, 다른 한쪽의 焦點을 다닌 後에 <span style="color:DarkRed;font-weight:bold">경</span>面에서 反<span style="color:DarkRed;font-weight:bold">사</span>된 <span style="color:DarkRed;font-weight:bold">廣</span>線은, 벌써 다른 한쪽의 焦點을 通<span style="color:DarkRed;font-weight:bold">과</span>한다. <br />
+<span style="color:Olive;font-weight:bold">楕</span><span style="color:Olive;font-weight:bold">圓</span>面<span style="color:Olive;font-weight:bold">鏡</span>에서는, 다른 한쪽의 焦點을 다닌 後에 <span style="color:Olive;font-weight:bold">鏡</span>面에서 反<span style="color:Olive;font-weight:bold">射</span>된 <span style="color:Olive;font-weight:bold">光</span>線은, 벌써 다른 한쪽의 焦點을 通<span style="color:Olive;font-weight:bold">過</span>한다.
+</p>
+
+<p>
+내각<span style="color:DarkCyan;font-weight:bold">관</span><span style="color:DarkCyan;font-weight:bold">방</span>장관에게 <span style="color:DarkCyan;font-weight:bold">등</span><span style="color:DarkCyan;font-weight:bold">파</span><span style="color:DarkCyan;font-weight:bold">효</span>웅（후지나미 타카오）, 문부<span style="color:DarkCyan;font-weight:bold">대</span><span style="color:DarkCyan;font-weight:bold">신</span>에게 <span style="color:DarkCyan;font-weight:bold">삼</span><span style="color:DarkCyan;font-weight:bold">선</span><span style="color:DarkCyan;font-weight:bold">랑</span>（모리 요시로우）를 임명. <br />
+內閣<span style="color:DarkRed;font-weight:bold">觀</span><span style="color:DarkRed;font-weight:bold">方</span>長官에게 <span style="color:DarkRed;font-weight:bold">等</span><span style="color:DarkRed;font-weight:bold">派</span><span style="color:DarkRed;font-weight:bold">效</span>雄（후지나미 타카오）, 文部<span style="color:DarkRed;font-weight:bold">代</span><span style="color:DarkRed;font-weight:bold">身</span>에게 <span style="color:DarkRed;font-weight:bold">三</span><span style="color:DarkRed;font-weight:bold">船</span><span style="color:DarkRed;font-weight:bold">郎</span>（모리 요시로우）를 任命. <br />
+內閣<span style="color:Olive;font-weight:bold">官</span><span style="color:Olive;font-weight:bold">房</span>長官에게 <span style="color:Olive;font-weight:bold">藤</span><span style="color:Olive;font-weight:bold">波</span><span style="color:Olive;font-weight:bold">孝</span>雄（후지나미 타카오）, 文部<span style="color:Olive;font-weight:bold">大</span><span style="color:Olive;font-weight:bold">臣</span>에게 <span style="color:Olive;font-weight:bold">森</span><span style="color:Olive;font-weight:bold">善</span><span style="color:Olive;font-weight:bold">朗</span>（모리 요시로우）를 任命.
+</p>
+
+<p>
+이 후, <span style="color:DarkCyan;font-weight:bold">등</span>휘는 보다 한층 더 민주화를 추진해 가게 된다. <br />
+이 後, <span style="color:DarkRed;font-weight:bold">等</span>輝는 보다 한층 더 民主化를 推進해 가게 된다. <br />
+이 後, <span style="color:Olive;font-weight:bold">登</span>輝는 보다 한층 더 民主化를 推進해 가게 된다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">태</span>풍에 영향을 주어 큰 비가 되는 경우가 있다. <br />
+<span style="color:DarkRed;font-weight:bold">太</span>風에 影響을 주어 큰 비가 되는 境遇가 있다. <br />
+<span style="color:Olive;font-weight:bold">颱</span>風에 影響을 주어 큰 비가 되는 境遇가 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">기</span>원전 399년, 소크라테스는 친한 인물과 마지막 <span style="color:DarkCyan;font-weight:bold">문</span>답을 주고 받아 <span style="color:DarkCyan;font-weight:bold">독</span><span style="color:DarkCyan;font-weight:bold">당</span><span style="color:DarkCyan;font-weight:bold">근</span>의 잔을 부추겨, <span style="color:DarkCyan;font-weight:bold">종</span><span style="color:DarkCyan;font-weight:bold">용</span>으로서 죽어 임했다. <br />
+<span style="color:DarkRed;font-weight:bold">起</span>元前 399年, 소크라테스는 親한 人物과 마지막 <span style="color:DarkRed;font-weight:bold">文</span>答을 주고 받아 <span style="color:DarkRed;font-weight:bold">獨</span><span style="color:DarkRed;font-weight:bold">黨</span><span style="color:DarkRed;font-weight:bold">近</span>의 잔을 부추겨, <span style="color:DarkRed;font-weight:bold">種</span><span style="color:DarkRed;font-weight:bold">用</span>으로서 죽어 臨했다. <br />
+<span style="color:Olive;font-weight:bold">紀</span>元前 399年, 소크라테스는 親한 人物과 마지막 <span style="color:Olive;font-weight:bold">問</span>答을 주고 받아 <span style="color:Olive;font-weight:bold">毒</span><span style="color:Olive;font-weight:bold">당</span><span style="color:Olive;font-weight:bold">근</span>의 잔을 부추겨, <span style="color:Olive;font-weight:bold">종</span><span style="color:Olive;font-weight:bold">용</span>으로서 죽어 臨했다.
+</p>
+
+<p>
+몸을 고정할 필요등에서, <span style="color:DarkCyan;font-weight:bold">다</span>세포<span style="color:DarkCyan;font-weight:bold">화</span>를 한다고 해도, 세포가 평평하게 줄지어 있는 구조까지는, 특히 궁<span style="color:DarkCyan;font-weight:bold">리</span>하지 않아도 각세포를 자활할 수 있다. <br />
+몸을 固定할 必要等에서, <span style="color:DarkRed;font-weight:bold">다</span>細胞<span style="color:DarkRed;font-weight:bold">和</span>를 한다고 해도, 細胞가 平平하게 줄지어 있는 構造까지는, 特히 窮<span style="color:DarkRed;font-weight:bold">리</span>하지 않아도 各細胞를 自活할 수 있다. <br />
+몸을 固定할 必要等에서, <span style="color:Olive;font-weight:bold">多</span>細胞<span style="color:Olive;font-weight:bold">化</span>를 한다고 해도, 細胞가 平平하게 줄지어 있는 構造까지는, 特히 窮<span style="color:Olive;font-weight:bold">理</span>하지 않아도 各細胞를 自活할 수 있다.
+</p>
+
+<p>
+현행의 인권교육의 <span style="color:DarkCyan;font-weight:bold">지</span><span style="color:DarkCyan;font-weight:bold">침</span>은, 국제련합으로부터 제시된 「유엔 인권교육 10년」(1995년~2004년), 「인권교육을 위한 세계계획」(2005년~)등의 공식문장에 준거하고 있다. <br />
+現行의 人權敎育의 <span style="color:DarkRed;font-weight:bold">지</span><span style="color:DarkRed;font-weight:bold">침</span>은, 國際聯合으로부터 提示된 「유엔 人權敎育 10年」(1995年~2004年), 「人權敎育을 爲한 世界計劃」(2005年~)等의 公式文章에 準據하고 있다. <br />
+現行의 人權敎育의 <span style="color:Olive;font-weight:bold">指</span><span style="color:Olive;font-weight:bold">針</span>은, 國際聯合으로부터 提示된 「유엔 人權敎育 10年」(1995年~2004年), 「人權敎育을 爲한 世界計劃」(2005年~)等의 公式文章에 準據하고 있다.
+</p>
+
+<p>
+이 부분은, <span style="color:DarkCyan;font-weight:bold">염</span>색체의 구조상의 변화에 임하여 어떠한 역할을 지고 있다고 생각되고 있다. <br />
+이 部分은, <span style="color:DarkRed;font-weight:bold">念</span>色體의 構造上의 變化에 臨하여 어떠한 役割을 지고 있다고 생각되고 있다. <br />
+이 部分은, <span style="color:Olive;font-weight:bold">染</span>色體의 構造上의 變化에 臨하여 어떠한 役割을 지고 있다고 생각되고 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">중</span>력이란, 지구상에서 물체가 <span style="color:DarkCyan;font-weight:bold">지</span>면에 접근해 가는 현상이나, 그것을 일으킨다고 여겨지는 「힘」을 부르기 위한 호칭. <br />
+<span style="color:DarkRed;font-weight:bold">中</span>力이란, 地球上에서 物體가 <span style="color:DarkRed;font-weight:bold">지</span>面에 接近해 가는 現象이나, 그것을 일으킨다고 여겨지는 「힘」을 부르기 爲한 呼稱. <br />
+<span style="color:Olive;font-weight:bold">重</span>力이란, 地球上에서 物體가 <span style="color:Olive;font-weight:bold">地</span>面에 接近해 가는 現象이나, 그것을 일으킨다고 여겨지는 「힘」을 부르기 爲한 呼稱.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">전</span><span style="color:DarkCyan;font-weight:bold">국</span>은 네델란드 우위로 나아갈까에 생각되었지만, 네델란드는 본국이 <span style="color:DarkCyan;font-weight:bold">전</span><span style="color:DarkCyan;font-weight:bold">화</span>에 휩쓸린 후에 독일에 점령되고 있던 적도 있어 국력이 저하되고 있던 후에, 일본군이 방<span style="color:DarkCyan;font-weight:bold">치</span>하며 간 병기와 잔존 일본군장교의 도움을 받은 <span style="color:DarkCyan;font-weight:bold">인</span>도네시아의 무장세력(정규군・<span style="color:DarkCyan;font-weight:bold">비</span>정규군을 불문하고)과의 게릴라전에 괴로운 라레타. <br />
+<span style="color:DarkRed;font-weight:bold">全</span><span style="color:DarkRed;font-weight:bold">國</span>은 네델란드 優位로 나아갈까에 생각되었지만, 네델란드는 本國이 <span style="color:DarkRed;font-weight:bold">電</span><span style="color:DarkRed;font-weight:bold">話</span>에 휩쓸린 後에 獨逸에 占領되고 있던 적도 있어 國力이 低下되고 있던 後에, 日本軍이 放<span style="color:DarkRed;font-weight:bold">치</span>하며 간 兵器와 殘存 日本軍將校의 도움을 받은 <span style="color:DarkRed;font-weight:bold">印</span>도네시아의 武裝勢力(正規軍・<span style="color:DarkRed;font-weight:bold">비</span>正規軍을 不問하고)과의 게릴라戰에 괴로운 라레타. <br />
+<span style="color:Olive;font-weight:bold">戰</span><span style="color:Olive;font-weight:bold">局</span>은 네델란드 優位로 나아갈까에 생각되었지만, 네델란드는 本國이 <span style="color:Olive;font-weight:bold">戰</span><span style="color:Olive;font-weight:bold">火</span>에 휩쓸린 後에 獨逸에 占領되고 있던 적도 있어 國力이 低下되고 있던 後에, 日本軍이 放<span style="color:Olive;font-weight:bold">置</span>하며 간 兵器와 殘存 日本軍將校의 도움을 받은 <span style="color:Olive;font-weight:bold">인</span>도네시아의 武裝勢力(正規軍・<span style="color:Olive;font-weight:bold">非</span>正規軍을 不問하고)과의 게릴라戰에 괴로운 라레타.
+</p>
+
+<p>
+그러나, 많은 시민은 <span style="color:DarkCyan;font-weight:bold">건</span><span style="color:DarkCyan;font-weight:bold">물</span>의 틈새에 안테나를 세우거나 근처로부터 케이블을 빼거나 해 <span style="color:DarkCyan;font-weight:bold">남</span>몰<span style="color:DarkCyan;font-weight:bold">래</span> 시<span style="color:DarkCyan;font-weight:bold">청</span>하고 있는 것이 많아, 공식상은 부정되면서도 텔레비전은 넓게 민간에게 퍼지고 있다. <br />
+그러나, 많은 市民은 <span style="color:DarkRed;font-weight:bold">건</span><span style="color:DarkRed;font-weight:bold">물</span>의 틈새에 안테나를 세우거나 近處로부터 케이블을 빼거나 해 <span style="color:DarkRed;font-weight:bold">南</span>몰<span style="color:DarkRed;font-weight:bold">來</span> 視<span style="color:DarkRed;font-weight:bold">廳</span>하고 있는 것이 많아, 公式上은 否定되면서도 텔레비전은 넓게 民間에게 퍼지고 있다. <br />
+그러나, 많은 市民은 <span style="color:Olive;font-weight:bold">建</span><span style="color:Olive;font-weight:bold">物</span>의 틈새에 안테나를 세우거나 近處로부터 케이블을 빼거나 해 <span style="color:Olive;font-weight:bold">남</span>몰<span style="color:Olive;font-weight:bold">래</span> 視<span style="color:Olive;font-weight:bold">聽</span>하고 있는 것이 많아, 公式上은 否定되면서도 텔레비전은 넓게 民間에게 퍼지고 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">사</span><span style="color:DarkCyan;font-weight:bold">막</span>의 식물이나 <span style="color:DarkCyan;font-weight:bold">침</span>엽<span style="color:DarkCyan;font-weight:bold">수</span>는, <span style="color:DarkCyan;font-weight:bold">증</span><span style="color:DarkCyan;font-weight:bold">산</span>량을 줄여 <span style="color:DarkCyan;font-weight:bold">수</span>분을 보<span style="color:DarkCyan;font-weight:bold">관</span> 유지하기 위해의 여러가지 특징, 예를 들면 발달한 쿠치크라층, 작은 잎 면<span style="color:DarkCyan;font-weight:bold">적</span>, <span style="color:DarkCyan;font-weight:bold">매</span><span style="color:DarkCyan;font-weight:bold">몰</span>형의 <span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">공</span>등을 갖추고 있다. <br />
+<span style="color:DarkRed;font-weight:bold">사</span><span style="color:DarkRed;font-weight:bold">막</span>의 植物이나 <span style="color:DarkRed;font-weight:bold">침</span>葉<span style="color:DarkRed;font-weight:bold">數</span>는, <span style="color:DarkRed;font-weight:bold">證</span><span style="color:DarkRed;font-weight:bold">山</span>量을 줄여 <span style="color:DarkRed;font-weight:bold">수</span>分을 保<span style="color:DarkRed;font-weight:bold">관</span> 維持하기 爲해의 여러가지 特徵, 例를 들면 發達한 쿠치크라層, 작은 잎 面<span style="color:DarkRed;font-weight:bold">的</span>, <span style="color:DarkRed;font-weight:bold">매</span><span style="color:DarkRed;font-weight:bold">몰</span>型의 <span style="color:DarkRed;font-weight:bold">기</span><span style="color:DarkRed;font-weight:bold">公</span>等을 갖추고 있다. <br />
+<span style="color:Olive;font-weight:bold">沙</span><span style="color:Olive;font-weight:bold">漠</span>의 植物이나 <span style="color:Olive;font-weight:bold">針</span>葉<span style="color:Olive;font-weight:bold">樹</span>는, <span style="color:Olive;font-weight:bold">蒸</span><span style="color:Olive;font-weight:bold">散</span>量을 줄여 <span style="color:Olive;font-weight:bold">水</span>分을 保<span style="color:Olive;font-weight:bold">管</span> 維持하기 爲해의 여러가지 特徵, 例를 들면 發達한 쿠치크라層, 작은 잎 面<span style="color:Olive;font-weight:bold">積</span>, <span style="color:Olive;font-weight:bold">埋</span><span style="color:Olive;font-weight:bold">沒</span>型의 <span style="color:Olive;font-weight:bold">氣</span><span style="color:Olive;font-weight:bold">孔</span>等을 갖추고 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">숙</span>부의 <span style="color:DarkCyan;font-weight:bold">강</span>세<span style="color:DarkCyan;font-weight:bold">후</span>(<span style="color:DarkCyan;font-weight:bold">상</span><span style="color:DarkCyan;font-weight:bold">청</span>)는 중국공산당의 간부였지만, <span style="color:DarkCyan;font-weight:bold">적</span><span style="color:DarkCyan;font-weight:bold">남</span>을 얻지 않는 채 1939년에 중일전쟁에 현지<span style="color:DarkCyan;font-weight:bold">비</span><span style="color:DarkCyan;font-weight:bold">적</span>에게 살해되었다. <br />
+<span style="color:DarkRed;font-weight:bold">宿</span>父의 <span style="color:DarkRed;font-weight:bold">强</span>世<span style="color:DarkRed;font-weight:bold">後</span>(<span style="color:DarkRed;font-weight:bold">상</span><span style="color:DarkRed;font-weight:bold">청</span>)는 中國共産黨의 幹部였지만, <span style="color:DarkRed;font-weight:bold">적</span><span style="color:DarkRed;font-weight:bold">南</span>을 얻지 않는 채 1939年에 中日戰爭에 現地<span style="color:DarkRed;font-weight:bold">비</span><span style="color:DarkRed;font-weight:bold">的</span>에게 殺害되었다. <br />
+<span style="color:Olive;font-weight:bold">叔</span>父의 <span style="color:Olive;font-weight:bold">江</span>世<span style="color:Olive;font-weight:bold">侯</span>(<span style="color:Olive;font-weight:bold">上</span><span style="color:Olive;font-weight:bold">靑</span>)는 中國共産黨의 幹部였지만, <span style="color:Olive;font-weight:bold">嫡</span><span style="color:Olive;font-weight:bold">男</span>을 얻지 않는 채 1939年에 中日戰爭에 現地<span style="color:Olive;font-weight:bold">匪</span><span style="color:Olive;font-weight:bold">賊</span>에게 殺害되었다.
+</p>
+
+<p>
+라보아지에 이전에는4 <span style="color:DarkCyan;font-weight:bold">대</span><span style="color:DarkCyan;font-weight:bold">원</span><span style="color:DarkCyan;font-weight:bold">소</span>나 <span style="color:DarkCyan;font-weight:bold">후</span>로기스톤설등이 있어, 그러한 <span style="color:DarkCyan;font-weight:bold">혼</span><span style="color:DarkCyan;font-weight:bold">성</span>에 의해서 다양한 <span style="color:DarkCyan;font-weight:bold">물</span>성을 나타낸다고 생각되고 있었다. <br />
+라보아지에 以前에는4 <span style="color:DarkRed;font-weight:bold">대</span><span style="color:DarkRed;font-weight:bold">원</span><span style="color:DarkRed;font-weight:bold">소</span>나 <span style="color:DarkRed;font-weight:bold">後</span>로기스톤說等이 있어, 그러한 <span style="color:DarkRed;font-weight:bold">혼</span><span style="color:DarkRed;font-weight:bold">성</span>에 依해서 多樣한 <span style="color:DarkRed;font-weight:bold">물</span>性을 나타낸다고 생각되고 있었다. <br />
+라보아지에 以前에는4 <span style="color:Olive;font-weight:bold">大</span><span style="color:Olive;font-weight:bold">元</span><span style="color:Olive;font-weight:bold">素</span>나 <span style="color:Olive;font-weight:bold">후</span>로기스톤說等이 있어, 그러한 <span style="color:Olive;font-weight:bold">混</span><span style="color:Olive;font-weight:bold">成</span>에 依해서 多樣한 <span style="color:Olive;font-weight:bold">物</span>性을 나타낸다고 생각되고 있었다.
+</p>
+
+<p>
+정<span style="color:DarkCyan;font-weight:bold">체</span><span style="color:DarkCyan;font-weight:bold">전</span>선의 형<span style="color:DarkCyan;font-weight:bold">상</span>・이동. <br />
+停<span style="color:DarkRed;font-weight:bold">體</span><span style="color:DarkRed;font-weight:bold">戰</span>線의 形<span style="color:DarkRed;font-weight:bold">相</span>・移動. <br />
+停<span style="color:Olive;font-weight:bold">滯</span><span style="color:Olive;font-weight:bold">前</span>線의 形<span style="color:Olive;font-weight:bold">狀</span>・移動.
+</p>
+
+<p>
+제11<span style="color:DarkCyan;font-weight:bold">기</span> 삼중전회에 앞장 서는 것 1978년 11월, <span style="color:DarkCyan;font-weight:bold">안</span><span style="color:DarkCyan;font-weight:bold">휘</span><span style="color:DarkCyan;font-weight:bold">성</span><span style="color:DarkCyan;font-weight:bold">봉</span>양<span style="color:DarkCyan;font-weight:bold">현</span>소<span style="color:DarkCyan;font-weight:bold">강</span>촌의 농민 18명은 「생<span style="color:DarkCyan;font-weight:bold">사</span><span style="color:DarkCyan;font-weight:bold">상</span>」을 <span style="color:DarkCyan;font-weight:bold">연</span>판해, 마을내의 토지를 분배해 생산<span style="color:DarkCyan;font-weight:bold">청</span><span style="color:DarkCyan;font-weight:bold">부</span>를 개시했다. <br />
+第11<span style="color:DarkRed;font-weight:bold">기</span> 三中全會에 앞장 서는 것 1978年 11月, <span style="color:DarkRed;font-weight:bold">안</span><span style="color:DarkRed;font-weight:bold">揮</span><span style="color:DarkRed;font-weight:bold">性</span><span style="color:DarkRed;font-weight:bold">봉</span>陽<span style="color:DarkRed;font-weight:bold">現</span>小<span style="color:DarkRed;font-weight:bold">江</span>村의 農民 18名은 「生<span style="color:DarkRed;font-weight:bold">思</span><span style="color:DarkRed;font-weight:bold">想</span>」을 <span style="color:DarkRed;font-weight:bold">연</span>判해, 마을內의 土地를 分配해 生産<span style="color:DarkRed;font-weight:bold">淸</span><span style="color:DarkRed;font-weight:bold">部</span>를 開始했다. <br />
+第11<span style="color:Olive;font-weight:bold">期</span> 三中全會에 앞장 서는 것 1978年 11月, <span style="color:Olive;font-weight:bold">安</span><span style="color:Olive;font-weight:bold">徽</span><span style="color:Olive;font-weight:bold">省</span><span style="color:Olive;font-weight:bold">鳳</span>陽<span style="color:Olive;font-weight:bold">縣</span>小<span style="color:Olive;font-weight:bold">崗</span>村의 農民 18名은 「生<span style="color:Olive;font-weight:bold">死</span><span style="color:Olive;font-weight:bold">狀</span>」을 <span style="color:Olive;font-weight:bold">連</span>判해, 마을內의 土地를 分配해 生産<span style="color:Olive;font-weight:bold">請</span><span style="color:Olive;font-weight:bold">負</span>를 開始했다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">지</span><span style="color:DarkCyan;font-weight:bold">각</span>을 형성하는 <span style="color:DarkCyan;font-weight:bold">암</span><span style="color:DarkCyan;font-weight:bold">반</span>에는 맨틀 <span style="color:DarkCyan;font-weight:bold">대</span>류에 의한 플레이트의 생성・이동・충돌・엇갈림이나, 화산활동에 의한 마그마의 이동등 여러가지 요인으로 압축・끌어<span style="color:DarkCyan;font-weight:bold">당</span>기기(<span style="color:DarkCyan;font-weight:bold">인</span><span style="color:DarkCyan;font-weight:bold">장</span>)・어긋나(<span style="color:DarkCyan;font-weight:bold">전</span><span style="color:DarkCyan;font-weight:bold">단</span>)등의 응력이 발생한다. <br />
+<span style="color:DarkRed;font-weight:bold">知</span><span style="color:DarkRed;font-weight:bold">覺</span>을 形成하는 <span style="color:DarkRed;font-weight:bold">暗</span><span style="color:DarkRed;font-weight:bold">半</span>에는 맨틀 <span style="color:DarkRed;font-weight:bold">大</span>流에 依한 플레이트의 生成・移動・衝突・엇갈림이나, 火山活動에 依한 마그마의 移動等 여러가지 要因으로 壓縮・끌어<span style="color:DarkRed;font-weight:bold">黨</span>기기(<span style="color:DarkRed;font-weight:bold">人</span><span style="color:DarkRed;font-weight:bold">장</span>)・어긋나(<span style="color:DarkRed;font-weight:bold">前</span><span style="color:DarkRed;font-weight:bold">團</span>)等의 應力이 發生한다. <br />
+<span style="color:Olive;font-weight:bold">地</span><span style="color:Olive;font-weight:bold">殼</span>을 形成하는 <span style="color:Olive;font-weight:bold">岩</span><span style="color:Olive;font-weight:bold">盤</span>에는 맨틀 <span style="color:Olive;font-weight:bold">對</span>流에 依한 플레이트의 生成・移動・衝突・엇갈림이나, 火山活動에 依한 마그마의 移動等 여러가지 要因으로 壓縮・끌어<span style="color:Olive;font-weight:bold">당</span>기기(<span style="color:Olive;font-weight:bold">引</span><span style="color:Olive;font-weight:bold">張</span>)・어긋나(<span style="color:Olive;font-weight:bold">剪</span><span style="color:Olive;font-weight:bold">斷</span>)等의 應力이 發生한다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">진</span><span style="color:DarkCyan;font-weight:bold">수</span><span style="color:DarkCyan;font-weight:bold">편</span>정권<span style="color:DarkCyan;font-weight:bold">시</span>. <br />
+<span style="color:DarkRed;font-weight:bold">進</span><span style="color:DarkRed;font-weight:bold">數</span><span style="color:DarkRed;font-weight:bold">편</span>政權<span style="color:DarkRed;font-weight:bold">시</span>. <br />
+<span style="color:Olive;font-weight:bold">陳</span><span style="color:Olive;font-weight:bold">水</span><span style="color:Olive;font-weight:bold">扁</span>政權<span style="color:Olive;font-weight:bold">時</span>.
+</p>
+
+<p>
+운동하고 먹이를 찾아다니는, 동물적인 성격의 것으로는, 특히 운동을 위한 <span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">관</span>과 <span style="color:DarkCyan;font-weight:bold">섭</span><span style="color:DarkCyan;font-weight:bold">식</span>을 위한 <span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">관</span>이 발달한다. <br />
+運動하고 먹이를 찾아다니는, 動物的인 性格의 것으로는, 特히 運動을 爲한 <span style="color:DarkRed;font-weight:bold">機</span><span style="color:DarkRed;font-weight:bold">關</span>과 <span style="color:DarkRed;font-weight:bold">涉</span><span style="color:DarkRed;font-weight:bold">式</span>을 爲한 <span style="color:DarkRed;font-weight:bold">機</span><span style="color:DarkRed;font-weight:bold">關</span>이 發達한다. <br />
+運動하고 먹이를 찾아다니는, 動物的인 性格의 것으로는, 特히 運動을 爲한 <span style="color:Olive;font-weight:bold">器</span><span style="color:Olive;font-weight:bold">官</span>과 <span style="color:Olive;font-weight:bold">攝</span><span style="color:Olive;font-weight:bold">食</span>을 爲한 <span style="color:Olive;font-weight:bold">器</span><span style="color:Olive;font-weight:bold">官</span>이 發達한다.
+</p>
+
+<p>
+1965년의 「9월 30일사건」에 의해서 실각한 다음은 불<span style="color:DarkCyan;font-weight:bold">우</span>의 <span style="color:DarkCyan;font-weight:bold">만</span>년을 보냈지만, 지금 더 국민에게는 「<span style="color:DarkCyan;font-weight:bold">분</span>・카루노」(카루노 <span style="color:DarkCyan;font-weight:bold">형</span>님)로 불려 국<span style="color:DarkCyan;font-weight:bold">부</span>로서 <span style="color:DarkCyan;font-weight:bold">경</span><span style="color:DarkCyan;font-weight:bold">의</span>를 가지고 계속 사랑받고 있어 현재도 10만 루피아 지폐에 <span style="color:DarkCyan;font-weight:bold">초</span><span style="color:DarkCyan;font-weight:bold">상</span>이 그려져 있다 경력. <br />
+1965年의 「9月 30日事件」에 依해서 失脚한 다음은 不<span style="color:DarkRed;font-weight:bold">우</span>의 <span style="color:DarkRed;font-weight:bold">萬</span>年을 보냈지만, 只今 더 國民에게는 「<span style="color:DarkRed;font-weight:bold">分</span>・카루노」(카루노 <span style="color:DarkRed;font-weight:bold">形</span>님)로 불려 國<span style="color:DarkRed;font-weight:bold">府</span>로서 <span style="color:DarkRed;font-weight:bold">京</span><span style="color:DarkRed;font-weight:bold">義</span>를 가지고 繼續 사랑받고 있어 現在도 10萬 루피아 紙幣에 <span style="color:DarkRed;font-weight:bold">초</span><span style="color:DarkRed;font-weight:bold">상</span>이 그려져 있다 經歷. <br />
+1965年의 「9月 30日事件」에 依해서 失脚한 다음은 不<span style="color:Olive;font-weight:bold">遇</span>의 <span style="color:Olive;font-weight:bold">晩</span>年을 보냈지만, 只今 더 國民에게는 「<span style="color:Olive;font-weight:bold">분</span>・카루노」(카루노 <span style="color:Olive;font-weight:bold">兄</span>님)로 불려 國<span style="color:Olive;font-weight:bold">父</span>로서 <span style="color:Olive;font-weight:bold">敬</span><span style="color:Olive;font-weight:bold">意</span>를 가지고 繼續 사랑받고 있어 現在도 10萬 루피아 紙幣에 <span style="color:Olive;font-weight:bold">肖</span><span style="color:Olive;font-weight:bold">像</span>이 그려져 있다 經歷.
+</p>
+
+<p>
+이 종료를 <span style="color:DarkCyan;font-weight:bold">기</span>에 저작을 정리, 편집해, 「<span style="color:DarkCyan;font-weight:bold">등</span>촌문<span style="color:DarkCyan;font-weight:bold">고</span>」에 정리했다. <br />
+이 終了를 <span style="color:DarkRed;font-weight:bold">기</span>에 著作을 整理, 編輯해, 「<span style="color:DarkRed;font-weight:bold">等</span>村文<span style="color:DarkRed;font-weight:bold">고</span>」에 整理했다. <br />
+이 終了를 <span style="color:Olive;font-weight:bold">機</span>에 著作을 整理, 編輯해, 「<span style="color:Olive;font-weight:bold">藤</span>村文<span style="color:Olive;font-weight:bold">庫</span>」에 整理했다.
+</p>
+
+<p>
+제주<span style="color:DarkCyan;font-weight:bold">도</span> <br />
+濟州<span style="color:DarkRed;font-weight:bold">導</span> <br />
+濟州<span style="color:Olive;font-weight:bold">島</span>
+</p>
+
+<p>
+원나라, 청나라 시절에는 <span style="color:DarkCyan;font-weight:bold">피</span>지배민족이었다. <br />
+元나라, 淸나라 時節에는 <span style="color:DarkRed;font-weight:bold">피</span>支配民族이었다. <br />
+元나라, 淸나라 時節에는 <span style="color:Olive;font-weight:bold">被</span>支配民族이었다.
+</p>
+
+<p>
+또, 같은 전주시의 완산갑에서는 같을 「무소속<span style="color:DarkCyan;font-weight:bold">련</span><span style="color:DarkCyan;font-weight:bold">대</span>」의 <span style="color:DarkCyan;font-weight:bold">신</span>건후보가 역시 민주당후보를 눌러 당선했다. <br />
+또, 같은 全州市의 完山甲에서는 같을 「無所屬<span style="color:DarkRed;font-weight:bold">聯</span><span style="color:DarkRed;font-weight:bold">隊</span>」의 <span style="color:DarkRed;font-weight:bold">新</span>建候補가 역시 民主黨候補를 눌러 當選했다. <br />
+또, 같은 全州市의 完山甲에서는 같을 「無所屬<span style="color:Olive;font-weight:bold">連</span><span style="color:Olive;font-weight:bold">帶</span>」의 <span style="color:Olive;font-weight:bold">辛</span>建候補가 역시 民主黨候補를 눌러 當選했다.
+</p>
+
+<p>
+감각<span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">관</span>에는 빛에 대한 시각<span style="color:DarkCyan;font-weight:bold">기</span>, 소리에 대한 <span style="color:DarkCyan;font-weight:bold">청</span><span style="color:DarkCyan;font-weight:bold">각</span><span style="color:DarkCyan;font-weight:bold">기</span>, 화학물질에 대한 <span style="color:DarkCyan;font-weight:bold">후</span><span style="color:DarkCyan;font-weight:bold">각</span><span style="color:DarkCyan;font-weight:bold">기</span>・<span style="color:DarkCyan;font-weight:bold">미</span><span style="color:DarkCyan;font-weight:bold">각</span><span style="color:DarkCyan;font-weight:bold">기</span>, 기계<span style="color:DarkCyan;font-weight:bold">자</span><span style="color:DarkCyan;font-weight:bold">극</span>에 대한 <span style="color:DarkCyan;font-weight:bold">촉</span><span style="color:DarkCyan;font-weight:bold">각</span>기등을 들 수 있다. <br />
+感覺<span style="color:DarkRed;font-weight:bold">機</span><span style="color:DarkRed;font-weight:bold">關</span>에는 빛에 對한 視覺<span style="color:DarkRed;font-weight:bold">기</span>, 소리에 對한 <span style="color:DarkRed;font-weight:bold">淸</span><span style="color:DarkRed;font-weight:bold">각</span><span style="color:DarkRed;font-weight:bold">기</span>, 化學物質에 對한 <span style="color:DarkRed;font-weight:bold">後</span><span style="color:DarkRed;font-weight:bold">각</span><span style="color:DarkRed;font-weight:bold">기</span>・<span style="color:DarkRed;font-weight:bold">미</span><span style="color:DarkRed;font-weight:bold">각</span><span style="color:DarkRed;font-weight:bold">기</span>, 機械<span style="color:DarkRed;font-weight:bold">者</span><span style="color:DarkRed;font-weight:bold">極</span>에 對한 <span style="color:DarkRed;font-weight:bold">促</span><span style="color:DarkRed;font-weight:bold">각</span>器等을 들 수 있다. <br />
+感覺<span style="color:Olive;font-weight:bold">器</span><span style="color:Olive;font-weight:bold">官</span>에는 빛에 對한 視覺<span style="color:Olive;font-weight:bold">器</span>, 소리에 對한 <span style="color:Olive;font-weight:bold">聽</span><span style="color:Olive;font-weight:bold">覺</span><span style="color:Olive;font-weight:bold">器</span>, 化學物質에 對한 <span style="color:Olive;font-weight:bold">嗅</span><span style="color:Olive;font-weight:bold">覺</span><span style="color:Olive;font-weight:bold">器</span>・<span style="color:Olive;font-weight:bold">味</span><span style="color:Olive;font-weight:bold">覺</span><span style="color:Olive;font-weight:bold">器</span>, 機械<span style="color:Olive;font-weight:bold">刺</span><span style="color:Olive;font-weight:bold">戟</span>에 對한 <span style="color:Olive;font-weight:bold">觸</span><span style="color:Olive;font-weight:bold">覺</span>器等을 들 수 있다.
+</p>
+
+<p>
+조직<span style="color:DarkCyan;font-weight:bold">내</span>의 세포와 혈<span style="color:DarkCyan;font-weight:bold">액</span>과의 교환에 의해서 <span style="color:DarkCyan;font-weight:bold">성</span>분이 변화하기 때문에, 몸의 <span style="color:DarkCyan;font-weight:bold">부</span><span style="color:DarkCyan;font-weight:bold">위</span> 마다 <span style="color:DarkCyan;font-weight:bold">성</span><span style="color:DarkCyan;font-weight:bold">분</span>은 다른다. <br />
+組織<span style="color:DarkRed;font-weight:bold">内</span>의 細胞와 血<span style="color:DarkRed;font-weight:bold">額</span>과의 交換에 依해서 <span style="color:DarkRed;font-weight:bold">성</span>分이 變化하기 때문에, 몸의 <span style="color:DarkRed;font-weight:bold">부</span><span style="color:DarkRed;font-weight:bold">위</span> 마다 <span style="color:DarkRed;font-weight:bold">성</span><span style="color:DarkRed;font-weight:bold">분</span>은 다른다. <br />
+組織<span style="color:Olive;font-weight:bold">內</span>의 細胞와 血<span style="color:Olive;font-weight:bold">液</span>과의 交換에 依해서 <span style="color:Olive;font-weight:bold">成</span>分이 變化하기 때문에, 몸의 <span style="color:Olive;font-weight:bold">部</span><span style="color:Olive;font-weight:bold">位</span> 마다 <span style="color:Olive;font-weight:bold">成</span><span style="color:Olive;font-weight:bold">分</span>은 다른다.
+</p>
+
+<p>
+그러나, 많은 식물은 <span style="color:DarkCyan;font-weight:bold">포</span><span style="color:DarkCyan;font-weight:bold">자</span>엽을 특수화시켜, 1개의 가지 끝에 집중해 꽃을 형성했다. <br />
+그러나, 많은 植物은 <span style="color:DarkRed;font-weight:bold">포</span><span style="color:DarkRed;font-weight:bold">자</span>葉을 特殊化시켜, 1個의 가지 끝에 集中해 꽃을 形成했다. <br />
+그러나, 많은 植物은 <span style="color:Olive;font-weight:bold">胞</span><span style="color:Olive;font-weight:bold">子</span>葉을 特殊化시켜, 1個의 가지 끝에 集中해 꽃을 形成했다.
+</p>
+
+<p>
+한편, 그것은 자연철학<span style="color:DarkCyan;font-weight:bold">과</span> 자연과학이 분<span style="color:DarkCyan;font-weight:bold">리</span>하는 예<span style="color:DarkCyan;font-weight:bold">고</span>이기도 했다. <br />
+한편, 그것은 自然哲學<span style="color:DarkRed;font-weight:bold">科</span> 自然科學이 分<span style="color:DarkRed;font-weight:bold">리</span>하는 豫<span style="color:DarkRed;font-weight:bold">고</span>이기도 했다. <br />
+한편, 그것은 自然哲學<span style="color:Olive;font-weight:bold">과</span> 自然科學이 分<span style="color:Olive;font-weight:bold">離</span>하는 豫<span style="color:Olive;font-weight:bold">告</span>이기도 했다.
+</p>
+
+<p>
+이것으로부터, <span style="color:DarkCyan;font-weight:bold">소</span><span style="color:DarkCyan;font-weight:bold">화</span><span style="color:DarkCyan;font-weight:bold">관</span>의 안 쪽은 체내가 아니고, 체외일 수 있다. <br />
+이것으로부터, <span style="color:DarkRed;font-weight:bold">소</span><span style="color:DarkRed;font-weight:bold">和</span><span style="color:DarkRed;font-weight:bold">館</span>의 안 쪽은 體內가 아니고, 體外일 수 있다. <br />
+이것으로부터, <span style="color:Olive;font-weight:bold">消</span><span style="color:Olive;font-weight:bold">化</span><span style="color:Olive;font-weight:bold">管</span>의 안 쪽은 體內가 아니고, 體外일 수 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">인</span>도네시아는 일본이 강복한 2일후의 1945년 8월 17일에 수카르노에 의해 독립을 선언해, 페타는 8월 19일<span style="color:DarkCyan;font-weight:bold">부</span>로 해산했지만, 강복한 일본에 대신해 식민지지배의 복활을 노린 네델란드와의 사이에 독립전쟁이 이윽고 시작된다. <br />
+<span style="color:DarkRed;font-weight:bold">印</span>도네시아는 日本이 降伏한 2日後의 1945年 8月 17日에 수카르노에 依해 獨立을 宣言해, 페타는 8月 19日<span style="color:DarkRed;font-weight:bold">部</span>로 解散했지만, 降伏한 日本에 代身해 植民地支配의 復活을 노린 네델란드와의 사이에 獨立戰爭이 이윽고 始作된다. <br />
+<span style="color:Olive;font-weight:bold">인</span>도네시아는 日本이 降伏한 2日後의 1945年 8月 17日에 수카르노에 依해 獨立을 宣言해, 페타는 8月 19日<span style="color:Olive;font-weight:bold">부</span>로 解散했지만, 降伏한 日本에 代身해 植民地支配의 復活을 노린 네델란드와의 사이에 獨立戰爭이 이윽고 始作된다.
+</p>
+
+<p>
+형태적형질이 환경에 영향을 받아 표현형이 바뀌는 것을 표현형의 <span style="color:DarkCyan;font-weight:bold">가</span><span style="color:DarkCyan;font-weight:bold">역</span>성이라고 한다. <br />
+形態的形質이 環境에 影響을 받아 表現型이 바뀌는 것을 表現型의 <span style="color:DarkRed;font-weight:bold">가</span><span style="color:DarkRed;font-weight:bold">역</span>性이라고 한다. <br />
+形態的形質이 環境에 影響을 받아 表現型이 바뀌는 것을 表現型의 <span style="color:Olive;font-weight:bold">可</span><span style="color:Olive;font-weight:bold">逆</span>性이라고 한다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">녹</span><span style="color:DarkCyan;font-weight:bold">조</span><span style="color:DarkCyan;font-weight:bold">류</span>에서는 <span style="color:DarkCyan;font-weight:bold">전</span><span style="color:DarkCyan;font-weight:bold">분</span>합<span style="color:DarkCyan;font-weight:bold">성</span>이 여기서 행해진다. <br />
+<span style="color:DarkRed;font-weight:bold">녹</span><span style="color:DarkRed;font-weight:bold">潮</span><span style="color:DarkRed;font-weight:bold">流</span>에서는 <span style="color:DarkRed;font-weight:bold">전</span><span style="color:DarkRed;font-weight:bold">分</span>合<span style="color:DarkRed;font-weight:bold">性</span>이 여기서 行해진다. <br />
+<span style="color:Olive;font-weight:bold">綠</span><span style="color:Olive;font-weight:bold">藻</span><span style="color:Olive;font-weight:bold">類</span>에서는 <span style="color:Olive;font-weight:bold">澱</span><span style="color:Olive;font-weight:bold">粉</span>合<span style="color:Olive;font-weight:bold">成</span>이 여기서 行해진다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">주</span><span style="color:DarkCyan;font-weight:bold">간</span>경제잡지 「에코노미스트」의 <span style="color:DarkCyan;font-weight:bold">주</span>식을 보유하고 있는 것 외에 프랑스의 경제<span style="color:DarkCyan;font-weight:bold">지</span> 「레・제코」를 <span style="color:DarkCyan;font-weight:bold">자</span>회사에 두어, 러시아의 「베드모스치」<span style="color:DarkCyan;font-weight:bold">지</span>와 합<span style="color:DarkCyan;font-weight:bold">판</span>사업을 설립하고 있다. <br />
+<span style="color:DarkRed;font-weight:bold">主</span><span style="color:DarkRed;font-weight:bold">間</span>經濟雜誌 「에코노미스트」의 <span style="color:DarkRed;font-weight:bold">주</span>式을 保有하고 있는 것 外에 프랑스의 經濟<span style="color:DarkRed;font-weight:bold">지</span> 「레・제코」를 <span style="color:DarkRed;font-weight:bold">字</span>會社에 두어, 러시아의 「베드모스치」<span style="color:DarkRed;font-weight:bold">지</span>와 合<span style="color:DarkRed;font-weight:bold">判</span>事業을 設立하고 있다. <br />
+<span style="color:Olive;font-weight:bold">週</span><span style="color:Olive;font-weight:bold">刊</span>經濟雜誌 「에코노미스트」의 <span style="color:Olive;font-weight:bold">株</span>式을 保有하고 있는 것 外에 프랑스의 經濟<span style="color:Olive;font-weight:bold">紙</span> 「레・제코」를 <span style="color:Olive;font-weight:bold">子</span>會社에 두어, 러시아의 「베드모스치」<span style="color:Olive;font-weight:bold">紙</span>와 合<span style="color:Olive;font-weight:bold">辦</span>事業을 設立하고 있다.
+</p>
+
+<p>
+사람의 <span style="color:DarkCyan;font-weight:bold">정</span><span style="color:DarkCyan;font-weight:bold">자</span>. <br />
+사람의 <span style="color:DarkRed;font-weight:bold">正</span><span style="color:DarkRed;font-weight:bold">字</span>. <br />
+사람의 <span style="color:Olive;font-weight:bold">精</span><span style="color:Olive;font-weight:bold">子</span>.
+</p>
+
+<p>
+1999년 4월 14일, 안왈은, 오직의 죄로 <span style="color:DarkCyan;font-weight:bold">징</span><span style="color:DarkCyan;font-weight:bold">역</span> 6년의 <span style="color:DarkCyan;font-weight:bold">유</span>죄판결을 받는다. <br />
+1999年 4月 14日, 안왈은, 汚職의 罪로 <span style="color:DarkRed;font-weight:bold">徵</span><span style="color:DarkRed;font-weight:bold">驛</span> 6年의 <span style="color:DarkRed;font-weight:bold">유</span>罪判決을 받는다. <br />
+1999年 4月 14日, 안왈은, 汚職의 罪로 <span style="color:Olive;font-weight:bold">懲</span><span style="color:Olive;font-weight:bold">役</span> 6年의 <span style="color:Olive;font-weight:bold">有</span>罪判決을 받는다.
+</p>
+
+<p>
+국어의 이야기의 발전적인 취급으로서 이야기의 영문<span style="color:DarkCyan;font-weight:bold">판</span>을 읽어, 우선 음성을 즐긴다. <br />
+國語의 이야기의 發展的인 取扱으로서 이야기의 英文<span style="color:DarkRed;font-weight:bold">判</span>을 읽어, 優先 音聲을 즐긴다. <br />
+國語의 이야기의 發展的인 取扱으로서 이야기의 英文<span style="color:Olive;font-weight:bold">版</span>을 읽어, 優先 音聲을 즐긴다.
+</p>
+
+<p>
+1955년, 말레이지아에서 처음으로 실시된 총선거(1955년총선거)에서는, 인도계세력을 대표하는 말레이지아・<span style="color:DarkCyan;font-weight:bold">인</span>도인회의(이하, MIC고 성략)에도 얼라이언스를 호소해 현재의 국민전선정권의 원<span style="color:DarkCyan;font-weight:bold">형</span>이 완성한다. <br />
+1955年, 말레이지아에서 처음으로 實施된 總選擧(1955年總選擧)에서는, 印度系勢力을 代表하는 말레이지아・<span style="color:DarkRed;font-weight:bold">인</span>度人會議(以下, MIC고 省略)에도 얼라이언스를 呼訴해 現在의 國民戰線政權의 原<span style="color:DarkRed;font-weight:bold">形</span>이 完成한다. <br />
+1955年, 말레이지아에서 처음으로 實施된 總選擧(1955年總選擧)에서는, 印度系勢力을 代表하는 말레이지아・<span style="color:Olive;font-weight:bold">印</span>度人會議(以下, MIC고 省略)에도 얼라이언스를 呼訴해 現在의 國民戰線政權의 原<span style="color:Olive;font-weight:bold">型</span>이 完成한다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">등</span>휘가 지명한 것은 <span style="color:DarkCyan;font-weight:bold">이</span><span style="color:DarkCyan;font-weight:bold">환</span>등의 실력자가 아니고 총통<span style="color:DarkCyan;font-weight:bold">부</span><span style="color:DarkCyan;font-weight:bold">비</span>서장의 <span style="color:DarkCyan;font-weight:bold">이</span>원<span style="color:DarkCyan;font-weight:bold">족</span>이었다. <br />
+<span style="color:DarkRed;font-weight:bold">等</span>輝가 指名한 것은 <span style="color:DarkRed;font-weight:bold">이</span><span style="color:DarkRed;font-weight:bold">換</span>等의 實力者가 아니고 總統<span style="color:DarkRed;font-weight:bold">部</span><span style="color:DarkRed;font-weight:bold">비</span>書長의 <span style="color:DarkRed;font-weight:bold">이</span>元<span style="color:DarkRed;font-weight:bold">族</span>이었다. <br />
+<span style="color:Olive;font-weight:bold">登</span>輝가 指名한 것은 <span style="color:Olive;font-weight:bold">李</span><span style="color:Olive;font-weight:bold">煥</span>等의 實力者가 아니고 總統<span style="color:Olive;font-weight:bold">府</span><span style="color:Olive;font-weight:bold">秘</span>書長의 <span style="color:Olive;font-weight:bold">李</span>元<span style="color:Olive;font-weight:bold">簇</span>이었다.
+</p>
+
+<p>
+그는 페로포네소스 전쟁에 대하고, 아테네의 식민지에 있어서의 반란진압으로서의 포테이다이아<span style="color:DarkCyan;font-weight:bold">공</span><span style="color:DarkCyan;font-weight:bold">위</span><span style="color:DarkCyan;font-weight:bold">전</span>, 보이오티아련방과의 대회전 데리온의 싸움으로 중<span style="color:DarkCyan;font-weight:bold">장</span>보병으로서 종군 했다(아르키비아데스는 <span style="color:DarkCyan;font-weight:bold">기</span>병으로서 참가, 당시의 회상이 「<span style="color:DarkCyan;font-weight:bold">향</span><span style="color:DarkCyan;font-weight:bold">연</span>」에 쓰여져 있다). <br />
+그는 페로포네소스 戰爭에 對하고, 아테네의 植民地에 있어서의 叛亂鎭壓으로서의 포테이다이아<span style="color:DarkRed;font-weight:bold">公</span><span style="color:DarkRed;font-weight:bold">位</span><span style="color:DarkRed;font-weight:bold">전</span>, 보이오티아聯邦과의 大會戰 데리온의 싸움으로 中<span style="color:DarkRed;font-weight:bold">장</span>步兵으로서 從軍 했다(아르키비아데스는 <span style="color:DarkRed;font-weight:bold">기</span>兵으로서 參加, 當時의 回想이 「<span style="color:DarkRed;font-weight:bold">向</span><span style="color:DarkRed;font-weight:bold">然</span>」에 쓰여져 있다). <br />
+그는 페로포네소스 戰爭에 對하고, 아테네의 植民地에 있어서의 叛亂鎭壓으로서의 포테이다이아<span style="color:Olive;font-weight:bold">攻</span><span style="color:Olive;font-weight:bold">圍</span><span style="color:Olive;font-weight:bold">戰</span>, 보이오티아聯邦과의 大會戰 데리온의 싸움으로 中<span style="color:Olive;font-weight:bold">將</span>步兵으로서 從軍 했다(아르키비아데스는 <span style="color:Olive;font-weight:bold">騎</span>兵으로서 參加, 當時의 回想이 「<span style="color:Olive;font-weight:bold">饗</span><span style="color:Olive;font-weight:bold">宴</span>」에 쓰여져 있다).
+</p>
+
+<p>
+그레고리력을 비롯한 많은 달<span style="color:DarkCyan;font-weight:bold">력</span>이 7일을 1<span style="color:DarkCyan;font-weight:bold">주</span>로 하고 있다. <br />
+그레고리曆을 비롯한 많은 달<span style="color:DarkRed;font-weight:bold">力</span>이 7日을 1<span style="color:DarkRed;font-weight:bold">州</span>로 하고 있다. <br />
+그레고리曆을 비롯한 많은 달<span style="color:Olive;font-weight:bold">曆</span>이 7日을 1<span style="color:Olive;font-weight:bold">週</span>로 하고 있다.
+</p>
+
+<p>
+부인은 중국의국민가수로 통하는 <span style="color:DarkCyan;font-weight:bold">팽</span><span style="color:DarkCyan;font-weight:bold">려</span><span style="color:DarkCyan;font-weight:bold">원</span>(<span style="color:DarkCyan;font-weight:bold">팽</span>려원)이다. <br />
+夫人은 中國의國民歌手로 通하는 <span style="color:DarkRed;font-weight:bold">膨</span><span style="color:DarkRed;font-weight:bold">려</span><span style="color:DarkRed;font-weight:bold">원</span>(<span style="color:DarkRed;font-weight:bold">膨</span>려원)이다. <br />
+夫人은 中國의國民歌手로 通하는 <span style="color:Olive;font-weight:bold">彭</span><span style="color:Olive;font-weight:bold">麗</span><span style="color:Olive;font-weight:bold">媛</span>(<span style="color:Olive;font-weight:bold">팽</span>려원)이다.
+</p>
+
+<p>
+그러나 정부발표나 통계에도 불구하고, GDP와 강한 상관관계를 가지는 <span style="color:DarkCyan;font-weight:bold">전</span>력 수요가 급<span style="color:DarkCyan;font-weight:bold">감</span>하고 있던 것으로부터, 실제로는 대폭적인 불황에 빠져 있었다는 관측도 있다. <br />
+그러나 政府發表나 統計에도 不拘하고, GDP와 强한 相關關係를 가지는 <span style="color:DarkRed;font-weight:bold">戰</span>力 需要가 急<span style="color:DarkRed;font-weight:bold">感</span>하고 있던 것으로부터, 實際로는 大幅的인 不況에 빠져 있었다는 觀測도 있다. <br />
+그러나 政府發表나 統計에도 不拘하고, GDP와 强한 相關關係를 가지는 <span style="color:Olive;font-weight:bold">電</span>力 需要가 急<span style="color:Olive;font-weight:bold">減</span>하고 있던 것으로부터, 實際로는 大幅的인 不況에 빠져 있었다는 觀測도 있다.
+</p>
+
+<p>
+1970년 11월 25일, 전년의 <span style="color:DarkCyan;font-weight:bold">우</span>국<span style="color:DarkCyan;font-weight:bold">렬</span><span style="color:DarkCyan;font-weight:bold">사</span>・강<span style="color:DarkCyan;font-weight:bold">등</span>소삼랑（에토우 <span style="color:DarkCyan;font-weight:bold">고</span>사부로우）의 자결에 <span style="color:DarkCyan;font-weight:bold">촉</span>발되어 <span style="color:DarkCyan;font-weight:bold">방</span><span style="color:DarkCyan;font-weight:bold">패</span>의 모임 <span style="color:DarkCyan;font-weight:bold">대</span><span style="color:DarkCyan;font-weight:bold">원</span> 4명과 함께, <span style="color:DarkCyan;font-weight:bold">자</span><span style="color:DarkCyan;font-weight:bold">위</span><span style="color:DarkCyan;font-weight:bold">대</span><span style="color:DarkCyan;font-weight:bold">시</span><span style="color:DarkCyan;font-weight:bold">곡</span>주둔<span style="color:DarkCyan;font-weight:bold">지</span>(현: 방위<span style="color:DarkCyan;font-weight:bold">성</span>（일본）본<span style="color:DarkCyan;font-weight:bold">성</span>)을 방문해 동부방면총<span style="color:DarkCyan;font-weight:bold">감</span>을 감<span style="color:DarkCyan;font-weight:bold">금</span>. <br />
+1970年 11月 25日, 前年의 <span style="color:DarkRed;font-weight:bold">우</span>國<span style="color:DarkRed;font-weight:bold">列</span><span style="color:DarkRed;font-weight:bold">史</span>・江<span style="color:DarkRed;font-weight:bold">等</span>小三郎（에토우 <span style="color:DarkRed;font-weight:bold">高</span>사부로우）의 自決에 <span style="color:DarkRed;font-weight:bold">促</span>發되어 <span style="color:DarkRed;font-weight:bold">方</span><span style="color:DarkRed;font-weight:bold">敗</span>의 모임 <span style="color:DarkRed;font-weight:bold">대</span><span style="color:DarkRed;font-weight:bold">원</span> 4名과 함께, <span style="color:DarkRed;font-weight:bold">자</span><span style="color:DarkRed;font-weight:bold">위</span><span style="color:DarkRed;font-weight:bold">大</span><span style="color:DarkRed;font-weight:bold">시</span><span style="color:DarkRed;font-weight:bold">曲</span>駐屯<span style="color:DarkRed;font-weight:bold">지</span>(現: 防衛<span style="color:DarkRed;font-weight:bold">星</span>（日本）本<span style="color:DarkRed;font-weight:bold">性</span>)을 訪問해 東部方面總<span style="color:DarkRed;font-weight:bold">感</span>을 監<span style="color:DarkRed;font-weight:bold">金</span>. <br />
+1970年 11月 25日, 前年의 <span style="color:Olive;font-weight:bold">憂</span>國<span style="color:Olive;font-weight:bold">烈</span><span style="color:Olive;font-weight:bold">士</span>・江<span style="color:Olive;font-weight:bold">藤</span>小三郎（에토우 <span style="color:Olive;font-weight:bold">고</span>사부로우）의 自決에 <span style="color:Olive;font-weight:bold">觸</span>發되어 <span style="color:Olive;font-weight:bold">防</span><span style="color:Olive;font-weight:bold">牌</span>의 모임 <span style="color:Olive;font-weight:bold">隊</span><span style="color:Olive;font-weight:bold">員</span> 4名과 함께, <span style="color:Olive;font-weight:bold">自</span><span style="color:Olive;font-weight:bold">衛</span><span style="color:Olive;font-weight:bold">隊</span><span style="color:Olive;font-weight:bold">市</span><span style="color:Olive;font-weight:bold">谷</span>駐屯<span style="color:Olive;font-weight:bold">地</span>(現: 防衛<span style="color:Olive;font-weight:bold">省</span>（日本）本<span style="color:Olive;font-weight:bold">省</span>)을 訪問해 東部方面總<span style="color:Olive;font-weight:bold">監</span>을 監<span style="color:Olive;font-weight:bold">禁</span>.
+</p>
+
+<p>
+그 후의 대통령<span style="color:DarkCyan;font-weight:bold">지</span>명선거에서는 골카르의 지지를 잃어 출마를 단념. <br />
+그 後의 大統領<span style="color:DarkRed;font-weight:bold">地</span>名選擧에서는 골카르의 支持를 잃어 出馬를 斷念. <br />
+그 後의 大統領<span style="color:Olive;font-weight:bold">指</span>名選擧에서는 골카르의 支持를 잃어 出馬를 斷念.
+</p>
+
+<p>
+약칭에 관해서, 당<span style="color:DarkCyan;font-weight:bold">임</span><span style="color:DarkCyan;font-weight:bold">원</span>등은 「진보당」을 이용하고 있다. <br />
+略稱에 關해서, 黨<span style="color:DarkRed;font-weight:bold">임</span><span style="color:DarkRed;font-weight:bold">原</span>等은 「進步黨」을 利用하고 있다. <br />
+略稱에 關해서, 黨<span style="color:Olive;font-weight:bold">任</span><span style="color:Olive;font-weight:bold">員</span>等은 「進步黨」을 利用하고 있다.
+</p>
+
+<p>
+이와 같이, 카르빈벤손 <span style="color:DarkCyan;font-weight:bold">회</span><span style="color:DarkCyan;font-weight:bold">로</span>만으로 <span style="color:DarkCyan;font-weight:bold">탄</span><span style="color:DarkCyan;font-weight:bold">소</span>고정을 실시하는 식물은, C3식물로 불린다. <br />
+이와 같이, 카르빈벤손 <span style="color:DarkRed;font-weight:bold">會</span><span style="color:DarkRed;font-weight:bold">로</span>만으로 <span style="color:DarkRed;font-weight:bold">탄</span><span style="color:DarkRed;font-weight:bold">소</span>固定을 實施하는 植物은, C3植物로 불린다. <br />
+이와 같이, 카르빈벤손 <span style="color:Olive;font-weight:bold">回</span><span style="color:Olive;font-weight:bold">路</span>만으로 <span style="color:Olive;font-weight:bold">炭</span><span style="color:Olive;font-weight:bold">素</span>固定을 實施하는 植物은, C3植物로 불린다.
+</p>
+
+<p>
+한층 더 <span style="color:DarkCyan;font-weight:bold">발</span>아 <span style="color:DarkCyan;font-weight:bold">시</span>에 <span style="color:DarkCyan;font-weight:bold">자</span>엽을 땅 속에 남긴 채로 지상에 성장하는 식물도 있어, 이 경<span style="color:DarkCyan;font-weight:bold">우</span> 자잎은 광합<span style="color:DarkCyan;font-weight:bold">성</span>을 전혀 실시하지 않는다. <br />
+한층 더 <span style="color:DarkRed;font-weight:bold">發</span>아 <span style="color:DarkRed;font-weight:bold">時</span>에 <span style="color:DarkRed;font-weight:bold">자</span>葉을 땅 속에 남긴 채로 地上에 成長하는 植物도 있어, 이 境<span style="color:DarkRed;font-weight:bold">우</span> 자잎은 光合<span style="color:DarkRed;font-weight:bold">性</span>을 全혀 實施하지 않는다. <br />
+한층 더 <span style="color:Olive;font-weight:bold">발</span>아 <span style="color:Olive;font-weight:bold">시</span>에 <span style="color:Olive;font-weight:bold">子</span>葉을 땅 속에 남긴 채로 地上에 成長하는 植物도 있어, 이 境<span style="color:Olive;font-weight:bold">遇</span> 자잎은 光合<span style="color:Olive;font-weight:bold">成</span>을 全혀 實施하지 않는다.
+</p>
+
+<p>
+사법개혁의 <span style="color:DarkCyan;font-weight:bold">역</span>사 <span style="color:DarkCyan;font-weight:bold">전</span>시대적이라고 하는 사우디아라비아의 사법제도이지만, 근년이 되고 나서는 여러가지 사법제도개혁을 해 법제도의 근대화가 진행되고 있다. <br />
+司法改革의 <span style="color:DarkRed;font-weight:bold">歴</span>史 <span style="color:DarkRed;font-weight:bold">戰</span>時代的이라고 하는 사우디아라비아의 司法制度이지만, 近年이 되고 나서는 여러가지 司法制度改革을 해 法制度의 近代化가 進行되고 있다. <br />
+司法改革의 <span style="color:Olive;font-weight:bold">歷</span>史 <span style="color:Olive;font-weight:bold">前</span>時代的이라고 하는 사우디아라비아의 司法制度이지만, 近年이 되고 나서는 여러가지 司法制度改革을 해 法制度의 近代化가 進行되고 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">세</span>포분렬은 세포가 <span style="color:DarkCyan;font-weight:bold">증</span><span style="color:DarkCyan;font-weight:bold">식</span>을 행하는 수단이며, 유전과 진화의 기본현상이다. <br />
+<span style="color:DarkRed;font-weight:bold">세</span>胞分裂은 細胞가 <span style="color:DarkRed;font-weight:bold">證</span><span style="color:DarkRed;font-weight:bold">式</span>을 行하는 手段이며, 遺傳과 進化의 基本現象이다. <br />
+<span style="color:Olive;font-weight:bold">細</span>胞分裂은 細胞가 <span style="color:Olive;font-weight:bold">增</span><span style="color:Olive;font-weight:bold">殖</span>을 行하는 手段이며, 遺傳과 進化의 基本現象이다.
+</p>
+
+<p>
+외교・양<span style="color:DarkCyan;font-weight:bold">안</span>관계. <br />
+外交・兩<span style="color:DarkRed;font-weight:bold">安</span>關係. <br />
+外交・兩<span style="color:Olive;font-weight:bold">岸</span>關係.
+</p>
+
+<p>
+일반적으로 <span style="color:DarkCyan;font-weight:bold">수</span><span style="color:DarkCyan;font-weight:bold">정</span>이라고 하면 동물의 그것을 가리키는 것이 많다. <br />
+一般的으로 <span style="color:DarkRed;font-weight:bold">수</span><span style="color:DarkRed;font-weight:bold">正</span>이라고 하면 動物의 그것을 가리키는 것이 많다. <br />
+一般的으로 <span style="color:Olive;font-weight:bold">受</span><span style="color:Olive;font-weight:bold">精</span>이라고 하면 動物의 그것을 가리키는 것이 많다.
+</p>
+
+<p>
+이 마디에서는, 특히 유<span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">반</span>응에 대해 영향을 <span style="color:DarkCyan;font-weight:bold">고</span><span style="color:DarkCyan;font-weight:bold">려</span>해야 할 인자・조건을, 정성적, 경험적인 관점으로부터 <span style="color:DarkCyan;font-weight:bold">개</span><span style="color:DarkCyan;font-weight:bold">설</span>한다. <br />
+이 마디에서는, 特히 有<span style="color:DarkRed;font-weight:bold">基</span><span style="color:DarkRed;font-weight:bold">盤</span>應에 對해 影響을 <span style="color:DarkRed;font-weight:bold">高</span><span style="color:DarkRed;font-weight:bold">麗</span>해야 할 因子・條件을, 定性的, 經驗的인 觀點으로부터 <span style="color:DarkRed;font-weight:bold">開</span><span style="color:DarkRed;font-weight:bold">설</span>한다. <br />
+이 마디에서는, 特히 有<span style="color:Olive;font-weight:bold">機</span><span style="color:Olive;font-weight:bold">反</span>應에 對해 影響을 <span style="color:Olive;font-weight:bold">考</span><span style="color:Olive;font-weight:bold">慮</span>해야 할 因子・條件을, 定性的, 經驗的인 觀點으로부터 <span style="color:Olive;font-weight:bold">槪</span><span style="color:Olive;font-weight:bold">說</span>한다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">이</span><span style="color:DarkCyan;font-weight:bold">동</span><span style="color:DarkCyan;font-weight:bold">재</span>(Lee Khoon Choy, 1924년- )는, 싱가폴의 정치인. <br />
+<span style="color:DarkRed;font-weight:bold">移</span><span style="color:DarkRed;font-weight:bold">動</span><span style="color:DarkRed;font-weight:bold">在</span>(Lee Khoon Choy, 1924年- )는, 싱가폴의 政治人. <br />
+<span style="color:Olive;font-weight:bold">李</span><span style="color:Olive;font-weight:bold">烔</span><span style="color:Olive;font-weight:bold">才</span>(Lee Khoon Choy, 1924年- )는, 싱가폴의 政治人.
+</p>
+
+<p>
+한층 더 미토콘드리아<span style="color:DarkCyan;font-weight:bold">내</span>에서 합성한 ATP를 세포<span style="color:DarkCyan;font-weight:bold">내</span>에 수송할 때에 1 <span style="color:DarkCyan;font-weight:bold">당</span>량의 플로톤을 <span style="color:DarkCyan;font-weight:bold">소</span>비하기 때문에, 세포<span style="color:DarkCyan;font-weight:bold">질</span><span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">질</span>로 <span style="color:DarkCyan;font-weight:bold">소</span>비하기 위한 ATP의 합<span style="color:DarkCyan;font-weight:bold">성</span>에 필요한 플로톤의 <span style="color:DarkCyan;font-weight:bold">당</span>량(H+/ATP<span style="color:DarkCyan;font-weight:bold">비</span>)은 4가 된다. <br />
+한층 더 미토콘드리아<span style="color:DarkRed;font-weight:bold">내</span>에서 合成한 ATP를 細胞<span style="color:DarkRed;font-weight:bold">내</span>에 輸送할 때에 1 <span style="color:DarkRed;font-weight:bold">黨</span>量의 플로톤을 <span style="color:DarkRed;font-weight:bold">소</span>費하기 때문에, 細胞<span style="color:DarkRed;font-weight:bold">질</span><span style="color:DarkRed;font-weight:bold">기</span><span style="color:DarkRed;font-weight:bold">질</span>로 <span style="color:DarkRed;font-weight:bold">소</span>費하기 爲한 ATP의 合<span style="color:DarkRed;font-weight:bold">性</span>에 必要한 플로톤의 <span style="color:DarkRed;font-weight:bold">黨</span>量(H+/ATP<span style="color:DarkRed;font-weight:bold">비</span>)은 4가 된다. <br />
+한층 더 미토콘드리아<span style="color:Olive;font-weight:bold">內</span>에서 合成한 ATP를 細胞<span style="color:Olive;font-weight:bold">內</span>에 輸送할 때에 1 <span style="color:Olive;font-weight:bold">當</span>量의 플로톤을 <span style="color:Olive;font-weight:bold">消</span>費하기 때문에, 細胞<span style="color:Olive;font-weight:bold">質</span><span style="color:Olive;font-weight:bold">基</span><span style="color:Olive;font-weight:bold">質</span>로 <span style="color:Olive;font-weight:bold">消</span>費하기 爲한 ATP의 合<span style="color:Olive;font-weight:bold">成</span>에 必要한 플로톤의 <span style="color:Olive;font-weight:bold">當</span>量(H+/ATP<span style="color:Olive;font-weight:bold">比</span>)은 4가 된다.
+</p>
+
+<p>
+사람의 감각<span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">관</span>. <br />
+사람의 感覺<span style="color:DarkRed;font-weight:bold">機</span><span style="color:DarkRed;font-weight:bold">關</span>. <br />
+사람의 感覺<span style="color:Olive;font-weight:bold">器</span><span style="color:Olive;font-weight:bold">官</span>.
+</p>
+
+<p>
+이 때문에 각지의 우<span style="color:DarkCyan;font-weight:bold">물</span>에서는 <span style="color:DarkCyan;font-weight:bold">수</span>위의 저하가 심각하게 되고 있어 현재의 페이스로 물을 계속 사용하면 , <span style="color:DarkCyan;font-weight:bold">지</span><span style="color:DarkCyan;font-weight:bold">하</span><span style="color:DarkCyan;font-weight:bold">수</span>자원은 2040년까지 <span style="color:DarkCyan;font-weight:bold">고</span><span style="color:DarkCyan;font-weight:bold">갈</span>한다고 예측되고 있다. <br />
+이 때문에 各地의 우<span style="color:DarkRed;font-weight:bold">物</span>에서는 <span style="color:DarkRed;font-weight:bold">수</span>位의 低下가 深刻하게 되고 있어 現在의 페이스로 물을 繼續 使用하면 , <span style="color:DarkRed;font-weight:bold">지</span><span style="color:DarkRed;font-weight:bold">하</span><span style="color:DarkRed;font-weight:bold">數</span>資源은 2040年까지 <span style="color:DarkRed;font-weight:bold">고</span><span style="color:DarkRed;font-weight:bold">갈</span>한다고 豫測되고 있다. <br />
+이 때문에 各地의 우<span style="color:Olive;font-weight:bold">물</span>에서는 <span style="color:Olive;font-weight:bold">水</span>位의 低下가 深刻하게 되고 있어 現在의 페이스로 물을 繼續 使用하면 , <span style="color:Olive;font-weight:bold">地</span><span style="color:Olive;font-weight:bold">下</span><span style="color:Olive;font-weight:bold">水</span>資源은 2040年까지 <span style="color:Olive;font-weight:bold">枯</span><span style="color:Olive;font-weight:bold">渴</span>한다고 豫測되고 있다.
+</p>
+
+<p>
+이 레이건이나 대처의 노선의 선구자가 된 사람이, 1973년에 칠레・쿠데타를 일으킨 아우구스트・피노<span style="color:DarkCyan;font-weight:bold">체</span>트이며, 강경한 머니탈리즘(monetarism) 정책을 <span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">조</span>로 했다. <br />
+이 레이건이나 대처의 路線의 先驅者가 된 사람이, 1973年에 칠레・쿠데타를 일으킨 아우구스트・피노<span style="color:DarkRed;font-weight:bold">體</span>트이며, 强硬한 머니탈리즘(monetarism) 政策을 <span style="color:DarkRed;font-weight:bold">기</span><span style="color:DarkRed;font-weight:bold">조</span>로 했다. <br />
+이 레이건이나 대처의 路線의 先驅者가 된 사람이, 1973年에 칠레・쿠데타를 일으킨 아우구스트・피노<span style="color:Olive;font-weight:bold">체</span>트이며, 强硬한 머니탈리즘(monetarism) 政策을 <span style="color:Olive;font-weight:bold">基</span><span style="color:Olive;font-weight:bold">調</span>로 했다.
+</p>
+
+<p>
+1915년 귀국해, 페난으로 <span style="color:DarkCyan;font-weight:bold">면</span>학을 계속했다. <br />
+1915年 歸國해, 페난으로 <span style="color:DarkRed;font-weight:bold">面</span>學을 繼續했다. <br />
+1915年 歸國해, 페난으로 <span style="color:Olive;font-weight:bold">勉</span>學을 繼續했다.
+</p>
+
+<p>
+일반적으로 <span style="color:DarkCyan;font-weight:bold">한</span>랭<span style="color:DarkCyan;font-weight:bold">저</span><span style="color:DarkCyan;font-weight:bold">기</span>압은 지상일<span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">도</span>에서는 명<span style="color:DarkCyan;font-weight:bold">료</span>하지 않게 <span style="color:DarkCyan;font-weight:bold">전</span>선을 수반하지 않는 <span style="color:DarkCyan;font-weight:bold">소</span><span style="color:DarkCyan;font-weight:bold">저</span><span style="color:DarkCyan;font-weight:bold">기</span>압으로서 그려지지만, 고층일<span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">도</span>에 대하고는 <span style="color:DarkCyan;font-weight:bold">한</span><span style="color:DarkCyan;font-weight:bold">기</span>를 수반하는 매우 현저한 소용돌이로서 그려진다. <br />
+一般的으로 <span style="color:DarkRed;font-weight:bold">한</span>冷<span style="color:DarkRed;font-weight:bold">저</span><span style="color:DarkRed;font-weight:bold">기</span>壓은 地上日<span style="color:DarkRed;font-weight:bold">記</span><span style="color:DarkRed;font-weight:bold">道</span>에서는 明<span style="color:DarkRed;font-weight:bold">료</span>하지 않게 <span style="color:DarkRed;font-weight:bold">戰</span>線을 隨伴하지 않는 <span style="color:DarkRed;font-weight:bold">소</span><span style="color:DarkRed;font-weight:bold">저</span><span style="color:DarkRed;font-weight:bold">기</span>壓으로서 그려지지만, 高層日<span style="color:DarkRed;font-weight:bold">記</span><span style="color:DarkRed;font-weight:bold">道</span>에 對하고는 <span style="color:DarkRed;font-weight:bold">한</span><span style="color:DarkRed;font-weight:bold">기</span>를 隨伴하는 매우 顯著한 소용돌이로서 그려진다. <br />
+一般的으로 <span style="color:Olive;font-weight:bold">寒</span>冷<span style="color:Olive;font-weight:bold">低</span><span style="color:Olive;font-weight:bold">氣</span>壓은 地上日<span style="color:Olive;font-weight:bold">氣</span><span style="color:Olive;font-weight:bold">도</span>에서는 明<span style="color:Olive;font-weight:bold">瞭</span>하지 않게 <span style="color:Olive;font-weight:bold">前</span>線을 隨伴하지 않는 <span style="color:Olive;font-weight:bold">小</span><span style="color:Olive;font-weight:bold">低</span><span style="color:Olive;font-weight:bold">氣</span>壓으로서 그려지지만, 高層日<span style="color:Olive;font-weight:bold">氣</span><span style="color:Olive;font-weight:bold">도</span>에 對하고는 <span style="color:Olive;font-weight:bold">寒</span><span style="color:Olive;font-weight:bold">氣</span>를 隨伴하는 매우 顯著한 소용돌이로서 그려진다.
+</p>
+
+<p>
+이것은 오히려 <span style="color:DarkCyan;font-weight:bold">다</span>세포생물에게 보여지는 세포의 역할분담 중에서, 없어도 그 기능을 완수할 수 있는 경우에는 그것이 퇴화하기도 한다고 하는 것 있을것이다. <br />
+이것은 오히려 <span style="color:DarkRed;font-weight:bold">다</span>細胞生物에게 보여지는 細胞의 役割分擔 中에서, 없어도 그 機能을 完遂할 수 있는 境遇에는 그것이 退化하기도 한다고 하는 것 있을것이다. <br />
+이것은 오히려 <span style="color:Olive;font-weight:bold">多</span>細胞生物에게 보여지는 細胞의 役割分擔 中에서, 없어도 그 機能을 完遂할 수 있는 境遇에는 그것이 退化하기도 한다고 하는 것 있을것이다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">골</span><span style="color:DarkCyan;font-weight:bold">수</span>로 <span style="color:DarkCyan;font-weight:bold">미</span>숙한 상태로 낳아진 후, <span style="color:DarkCyan;font-weight:bold">흉</span><span style="color:DarkCyan;font-weight:bold">선</span>(T세<span style="color:DarkCyan;font-weight:bold">포</span>)이나 <span style="color:DarkCyan;font-weight:bold">골</span><span style="color:DarkCyan;font-weight:bold">수</span>등(B세<span style="color:DarkCyan;font-weight:bold">포</span>)으로 성숙해, 또 림프절로 이동해, 거기서도 <span style="color:DarkCyan;font-weight:bold">증</span>생・성숙을 하는 등, 복잡한 경과를 더듬는다. <br />
+<span style="color:DarkRed;font-weight:bold">골</span><span style="color:DarkRed;font-weight:bold">首</span>로 <span style="color:DarkRed;font-weight:bold">미</span>熟한 狀態로 낳아진 後, <span style="color:DarkRed;font-weight:bold">흉</span><span style="color:DarkRed;font-weight:bold">線</span>(T細<span style="color:DarkRed;font-weight:bold">포</span>)이나 <span style="color:DarkRed;font-weight:bold">골</span><span style="color:DarkRed;font-weight:bold">數</span>等(B細<span style="color:DarkRed;font-weight:bold">포</span>)으로 成熟해, 또 림프節로 移動해, 거기서도 <span style="color:DarkRed;font-weight:bold">證</span>生・成熟을 하는 等, 複雜한 經過를 더듬는다. <br />
+<span style="color:Olive;font-weight:bold">骨</span><span style="color:Olive;font-weight:bold">髓</span>로 <span style="color:Olive;font-weight:bold">未</span>熟한 狀態로 낳아진 後, <span style="color:Olive;font-weight:bold">胸</span><span style="color:Olive;font-weight:bold">腺</span>(T細<span style="color:Olive;font-weight:bold">胞</span>)이나 <span style="color:Olive;font-weight:bold">骨</span><span style="color:Olive;font-weight:bold">髓</span>等(B細<span style="color:Olive;font-weight:bold">胞</span>)으로 成熟해, 또 림프節로 移動해, 거기서도 <span style="color:Olive;font-weight:bold">增</span>生・成熟을 하는 等, 複雜한 經過를 더듬는다.
+</p>
+
+<p>
+지금까지의 최고사법위원회에 대신해 최고재판소, <span style="color:DarkCyan;font-weight:bold">공</span><span style="color:DarkCyan;font-weight:bold">소</span>재판소, 보통 재판소가 설치되어 구미와 같은 3심제의 재판을 실시할 수 있게 되었다. <br />
+只今까지의 最高司法委員會에 代身해 最高裁判所, <span style="color:DarkRed;font-weight:bold">公</span><span style="color:DarkRed;font-weight:bold">素</span>裁判所, 普通 裁判所가 設置되어 歐美와 같은 3審制의 裁判을 實施할 수 있게 되었다. <br />
+只今까지의 最高司法委員會에 代身해 最高裁判所, <span style="color:Olive;font-weight:bold">控</span><span style="color:Olive;font-weight:bold">訴</span>裁判所, 普通 裁判所가 設置되어 歐美와 같은 3審制의 裁判을 實施할 수 있게 되었다.
+</p>
+
+<p>
+2008년 10월 29일, 지금까지 여성이 비우는 것이 곤난함 [[<span style="color:DarkCyan;font-weight:bold">의</span>학]], [[경영학]], [[외국어]]등을 가르치는 사우디아라비아 첫 여성전용의 종합대학교을 창설하는 것이 국왕 [[아브두라・빈・아브두르아즈즈・아르・사워드]]에 의해서 결정되어 리야드 교외에서 <span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">공</span>식이 거행되었다. <br />
+2008年 10月 29日, 只今까지 女性이 비우는 것이 困難함 [[<span style="color:DarkRed;font-weight:bold">의</span>學]], [[經營學]], [[外國語]]等을 가르치는 사우디아라비아 첫 女性專用의 綜合大學校을 創設하는 것이 國王 [[아브두라・빈・아브두르아즈즈・아르・사워드]]에 依해서 決定되어 리야드 郊外에서 <span style="color:DarkRed;font-weight:bold">기</span><span style="color:DarkRed;font-weight:bold">公</span>式이 擧行되었다. <br />
+2008年 10月 29日, 只今까지 女性이 비우는 것이 困難함 [[<span style="color:Olive;font-weight:bold">醫</span>學]], [[經營學]], [[外國語]]等을 가르치는 사우디아라비아 첫 女性專用의 綜合大學校을 創設하는 것이 國王 [[아브두라・빈・아브두르아즈즈・아르・사워드]]에 依해서 決定되어 리야드 郊外에서 <span style="color:Olive;font-weight:bold">起</span><span style="color:Olive;font-weight:bold">工</span>式이 擧行되었다.
+</p>
+
+<p>
+1973년, 이스람이 사바<span style="color:DarkCyan;font-weight:bold">주</span>의 종교(종래는 기독교였다)가 되어, 카다잔어와 같은 민족고유의 언어의 사용이 정지되었다. <br />
+1973年, 이스람이 사바<span style="color:DarkRed;font-weight:bold">主</span>의 宗敎(從來는 基督敎였다)가 되어, 카다잔어와 같은 民族固有의 言語의 使用이 停止되었다. <br />
+1973年, 이스람이 사바<span style="color:Olive;font-weight:bold">州</span>의 宗敎(從來는 基督敎였다)가 되어, 카다잔어와 같은 民族固有의 言語의 使用이 停止되었다.
+</p>
+
+<p>
+이 영화는 2006년 5월 24일에 로스앤젤레스, 뉴욕, 버클리, 캠벨, 샌노<span style="color:DarkCyan;font-weight:bold">제</span> 근교가 한정된 영화관에서 공개된 몇 일 후에, 전국에서 공개되었다. <br />
+이 映畵는 2006年 5月 24日에 로스앤젤레스, 뉴욕, 버클리, 캠벨, 샌노<span style="color:DarkRed;font-weight:bold">制</span> 近郊가 限定된 映畵館에서 公開된 몇 일 後에, 全國에서 公開되었다. <br />
+이 映畵는 2006年 5月 24日에 로스앤젤레스, 뉴욕, 버클리, 캠벨, 샌노<span style="color:Olive;font-weight:bold">제</span> 近郊가 限定된 映畵館에서 公開된 몇 일 後에, 全國에서 公開되었다.
+</p>
+
+<p>
+또, 생체내에서 일어나는 완만한 <span style="color:DarkCyan;font-weight:bold">산</span>화반응(<span style="color:DarkCyan;font-weight:bold">포</span><span style="color:DarkCyan;font-weight:bold">도</span><span style="color:DarkCyan;font-weight:bold">당</span>이 <span style="color:DarkCyan;font-weight:bold">산</span>화되어 물과 <span style="color:DarkCyan;font-weight:bold">이</span><span style="color:DarkCyan;font-weight:bold">산</span>화<span style="color:DarkCyan;font-weight:bold">탄</span><span style="color:DarkCyan;font-weight:bold">소</span>가 되는 반응등)도 <span style="color:DarkCyan;font-weight:bold">연</span><span style="color:DarkCyan;font-weight:bold">소</span>라고 부르는 일이 있다. <br />
+또, 生體內에서 일어나는 緩慢한 <span style="color:DarkRed;font-weight:bold">산</span>化反應(<span style="color:DarkRed;font-weight:bold">포</span><span style="color:DarkRed;font-weight:bold">도</span><span style="color:DarkRed;font-weight:bold">黨</span>이 <span style="color:DarkRed;font-weight:bold">산</span>化되어 물과 <span style="color:DarkRed;font-weight:bold">이</span><span style="color:DarkRed;font-weight:bold">山</span>化<span style="color:DarkRed;font-weight:bold">탄</span><span style="color:DarkRed;font-weight:bold">所</span>가 되는 反應等)도 <span style="color:DarkRed;font-weight:bold">연</span><span style="color:DarkRed;font-weight:bold">소</span>라고 부르는 일이 있다. <br />
+또, 生體內에서 일어나는 緩慢한 <span style="color:Olive;font-weight:bold">酸</span>化反應(<span style="color:Olive;font-weight:bold">葡</span><span style="color:Olive;font-weight:bold">萄</span><span style="color:Olive;font-weight:bold">糖</span>이 <span style="color:Olive;font-weight:bold">酸</span>化되어 물과 <span style="color:Olive;font-weight:bold">二</span><span style="color:Olive;font-weight:bold">酸</span>化<span style="color:Olive;font-weight:bold">炭</span><span style="color:Olive;font-weight:bold">素</span>가 되는 反應等)도 <span style="color:Olive;font-weight:bold">燃</span><span style="color:Olive;font-weight:bold">燒</span>라고 부르는 일이 있다.
+</p>
+
+<p>
+안왈은, 벌써, 오직죄의 <span style="color:DarkCyan;font-weight:bold">형</span><span style="color:DarkCyan;font-weight:bold">기</span>를 끝내고 있었다고는 해도, 말레이지아의 법률에서는, <span style="color:DarkCyan;font-weight:bold">형</span><span style="color:DarkCyan;font-weight:bold">기</span>가 끝난 앞으로 5년간은, 정치활동을 실시하는 것이 금지되고 있다. <br />
+안왈은, 벌써, 汚職罪의 <span style="color:DarkRed;font-weight:bold">形</span><span style="color:DarkRed;font-weight:bold">기</span>를 끝내고 있었다고는 해도, 말레이지아의 法律에서는, <span style="color:DarkRed;font-weight:bold">形</span><span style="color:DarkRed;font-weight:bold">기</span>가 끝난 앞으로 5年間은, 政治活動을 實施하는 것이 禁止되고 있다. <br />
+안왈은, 벌써, 汚職罪의 <span style="color:Olive;font-weight:bold">刑</span><span style="color:Olive;font-weight:bold">期</span>를 끝내고 있었다고는 해도, 말레이지아의 法律에서는, <span style="color:Olive;font-weight:bold">刑</span><span style="color:Olive;font-weight:bold">期</span>가 끝난 앞으로 5年間은, 政治活動을 實施하는 것이 禁止되고 있다.
+</p>
+
+<p>
+학교・학급의 「숨은 커리큘럼」은, 그러한 장소의 본연의 <span style="color:DarkCyan;font-weight:bold">자</span><span style="color:DarkCyan;font-weight:bold">세</span>나 분위<span style="color:DarkCyan;font-weight:bold">기</span>등에 의해 구성된다. <br />
+學校・學級의 「숨은 커리큘럼」은, 그러한 場所의 本然의 <span style="color:DarkRed;font-weight:bold">姿</span><span style="color:DarkRed;font-weight:bold">勢</span>나 雰圍<span style="color:DarkRed;font-weight:bold">機</span>等에 依해 構成된다. <br />
+學校・學級의 「숨은 커리큘럼」은, 그러한 場所의 本然의 <span style="color:Olive;font-weight:bold">仔</span><span style="color:Olive;font-weight:bold">細</span>나 雰圍<span style="color:Olive;font-weight:bold">氣</span>等에 依해 構成된다.
+</p>
+
+<p>
+조선예술<span style="color:DarkCyan;font-weight:bold">상</span> <br />
+朝鮮藝術<span style="color:DarkRed;font-weight:bold">上</span> <br />
+朝鮮藝術<span style="color:Olive;font-weight:bold">賞</span>
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">굴</span>절(물리학)(영어: refraction)라고는, 빛이나 음<span style="color:DarkCyan;font-weight:bold">파</span>등의 물<span style="color:DarkCyan;font-weight:bold">결</span>(<span style="color:DarkCyan;font-weight:bold">파</span>동)이 다른 <span style="color:DarkCyan;font-weight:bold">매</span>질의 경계에서 진행방향을 바꾸는 것이다. <br />
+<span style="color:DarkRed;font-weight:bold">굴</span>折(物理學)(英語: refraction)라고는, 빛이나 音<span style="color:DarkRed;font-weight:bold">派</span>等의 물<span style="color:DarkRed;font-weight:bold">結</span>(<span style="color:DarkRed;font-weight:bold">파</span>動)이 다른 <span style="color:DarkRed;font-weight:bold">매</span>質의 境界에서 進行方向을 바꾸는 것이다. <br />
+<span style="color:Olive;font-weight:bold">屈</span>折(物理學)(英語: refraction)라고는, 빛이나 音<span style="color:Olive;font-weight:bold">波</span>等의 물<span style="color:Olive;font-weight:bold">결</span>(<span style="color:Olive;font-weight:bold">波</span>動)이 다른 <span style="color:Olive;font-weight:bold">媒</span>質의 境界에서 進行方向을 바꾸는 것이다.
+</p>
+
+<p>
+바꾸어 말하면 분자의 모습은 측정<span style="color:DarkCyan;font-weight:bold">기</span>를 개입시켜 관측할 수 밖에 없고, 분자의 실<span style="color:DarkCyan;font-weight:bold">상</span>은 눈으로 본 물질의 형태에 의한 상정과는 반드시 일치하지 않는다. <br />
+바꾸어 말하면 分子의 모습은 測定<span style="color:DarkRed;font-weight:bold">期</span>를 介入시켜 觀測할 수 밖에 없고, 分子의 實<span style="color:DarkRed;font-weight:bold">上</span>은 눈으로 본 物質의 形態에 依한 想定과는 반드시 一致하지 않는다. <br />
+바꾸어 말하면 分子의 모습은 測定<span style="color:Olive;font-weight:bold">器</span>를 介入시켜 觀測할 수 밖에 없고, 分子의 實<span style="color:Olive;font-weight:bold">像</span>은 눈으로 본 物質의 形態에 依한 想定과는 반드시 一致하지 않는다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">항</span><span style="color:DarkCyan;font-weight:bold">체</span>(<span style="color:DarkCyan;font-weight:bold">면</span><span style="color:DarkCyan;font-weight:bold">역</span>글로블린)등을 사용해 모든 <span style="color:DarkCyan;font-weight:bold">이</span>물에 대해서 공격하지만, 특히 바이러스등이 작은 <span style="color:DarkCyan;font-weight:bold">이</span>물이나 <span style="color:DarkCyan;font-weight:bold">종</span><span style="color:DarkCyan;font-weight:bold">양</span>세<span style="color:DarkCyan;font-weight:bold">포</span>에 대해서는, <span style="color:DarkCyan;font-weight:bold">과</span><span style="color:DarkCyan;font-weight:bold">립</span><span style="color:DarkCyan;font-weight:bold">구</span>는 아니고 <span style="color:DarkCyan;font-weight:bold">임</span><span style="color:DarkCyan;font-weight:bold">파</span><span style="color:DarkCyan;font-weight:bold">구</span>가 중심이 되어 대응한다. <br />
+<span style="color:DarkRed;font-weight:bold">항</span><span style="color:DarkRed;font-weight:bold">체</span>(<span style="color:DarkRed;font-weight:bold">면</span><span style="color:DarkRed;font-weight:bold">役</span>글로블린)等을 使用해 모든 <span style="color:DarkRed;font-weight:bold">이</span>物에 對해서 攻擊하지만, 特히 바이러스等이 작은 <span style="color:DarkRed;font-weight:bold">이</span>物이나 <span style="color:DarkRed;font-weight:bold">종</span><span style="color:DarkRed;font-weight:bold">양</span>細<span style="color:DarkRed;font-weight:bold">포</span>에 對해서는, <span style="color:DarkRed;font-weight:bold">過</span><span style="color:DarkRed;font-weight:bold">立</span><span style="color:DarkRed;font-weight:bold">區</span>는 아니고 <span style="color:DarkRed;font-weight:bold">임</span><span style="color:DarkRed;font-weight:bold">派</span><span style="color:DarkRed;font-weight:bold">區</span>가 中心이 되어 對應한다. <br />
+<span style="color:Olive;font-weight:bold">抗</span><span style="color:Olive;font-weight:bold">體</span>(<span style="color:Olive;font-weight:bold">免</span><span style="color:Olive;font-weight:bold">疫</span>글로블린)等을 使用해 모든 <span style="color:Olive;font-weight:bold">異</span>物에 對해서 攻擊하지만, 特히 바이러스等이 작은 <span style="color:Olive;font-weight:bold">異</span>物이나 <span style="color:Olive;font-weight:bold">腫</span><span style="color:Olive;font-weight:bold">瘍</span>細<span style="color:Olive;font-weight:bold">胞</span>에 對해서는, <span style="color:Olive;font-weight:bold">顆</span><span style="color:Olive;font-weight:bold">粒</span><span style="color:Olive;font-weight:bold">球</span>는 아니고 <span style="color:Olive;font-weight:bold">淋</span><span style="color:Olive;font-weight:bold">巴</span><span style="color:Olive;font-weight:bold">球</span>가 中心이 되어 對應한다.
+</p>
+
+<p>
+이, <span style="color:DarkCyan;font-weight:bold">입</span><span style="color:DarkCyan;font-weight:bold">구</span>쪽을 <span style="color:DarkCyan;font-weight:bold">입</span>, 출<span style="color:DarkCyan;font-weight:bold">구</span>쪽을 <span style="color:DarkCyan;font-weight:bold">항</span><span style="color:DarkCyan;font-weight:bold">문</span>이라고 한다. <br />
+이, <span style="color:DarkRed;font-weight:bold">입</span><span style="color:DarkRed;font-weight:bold">구</span>쪽을 <span style="color:DarkRed;font-weight:bold">入</span>, 出<span style="color:DarkRed;font-weight:bold">구</span>쪽을 <span style="color:DarkRed;font-weight:bold">抗</span><span style="color:DarkRed;font-weight:bold">문</span>이라고 한다. <br />
+이, <span style="color:Olive;font-weight:bold">入</span><span style="color:Olive;font-weight:bold">口</span>쪽을 <span style="color:Olive;font-weight:bold">입</span>, 出<span style="color:Olive;font-weight:bold">口</span>쪽을 <span style="color:Olive;font-weight:bold">肛</span><span style="color:Olive;font-weight:bold">門</span>이라고 한다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">무</span>색<span style="color:DarkCyan;font-weight:bold">반</span>투명의 대<span style="color:DarkCyan;font-weight:bold">개</span><span style="color:DarkCyan;font-weight:bold">구</span>상이지만, <span style="color:DarkCyan;font-weight:bold">위</span><span style="color:DarkCyan;font-weight:bold">족</span>을 내, 활<span style="color:DarkCyan;font-weight:bold">발</span>히 아메바<span style="color:DarkCyan;font-weight:bold">모</span><span style="color:DarkCyan;font-weight:bold">양</span>운동을 하므로, 형태는 정해지지 않았다. <br />
+<span style="color:DarkRed;font-weight:bold">무</span>色<span style="color:DarkRed;font-weight:bold">反</span>透明의 大<span style="color:DarkRed;font-weight:bold">開</span><span style="color:DarkRed;font-weight:bold">구</span>想이지만, <span style="color:DarkRed;font-weight:bold">위</span><span style="color:DarkRed;font-weight:bold">族</span>을 내, 活<span style="color:DarkRed;font-weight:bold">發</span>히 아메바<span style="color:DarkRed;font-weight:bold">모</span><span style="color:DarkRed;font-weight:bold">양</span>運動을 하므로, 形態는 定해지지 않았다. <br />
+<span style="color:Olive;font-weight:bold">無</span>色<span style="color:Olive;font-weight:bold">半</span>透明의 大<span style="color:Olive;font-weight:bold">槪</span><span style="color:Olive;font-weight:bold">構</span>想이지만, <span style="color:Olive;font-weight:bold">僞</span><span style="color:Olive;font-weight:bold">足</span>을 내, 活<span style="color:Olive;font-weight:bold">潑</span>히 아메바<span style="color:Olive;font-weight:bold">模</span><span style="color:Olive;font-weight:bold">樣</span>運動을 하므로, 形態는 定해지지 않았다.
+</p>
+
+<p>
+제6가슴<span style="color:DarkCyan;font-weight:bold">골</span><span style="color:DarkCyan;font-weight:bold">수</span>이하의 뉴런은 후<span style="color:DarkCyan;font-weight:bold">색</span>의 안쪽 가까이에 있는 <span style="color:DarkCyan;font-weight:bold">박</span><span style="color:DarkCyan;font-weight:bold">속</span>을 통<span style="color:DarkCyan;font-weight:bold">과</span>한다. <br />
+第6가슴<span style="color:DarkRed;font-weight:bold">골</span><span style="color:DarkRed;font-weight:bold">數</span>以下의 뉴런은 後<span style="color:DarkRed;font-weight:bold">色</span>의 안쪽 가까이에 있는 <span style="color:DarkRed;font-weight:bold">朴</span><span style="color:DarkRed;font-weight:bold">續</span>을 通<span style="color:DarkRed;font-weight:bold">과</span>한다. <br />
+第6가슴<span style="color:Olive;font-weight:bold">骨</span><span style="color:Olive;font-weight:bold">髓</span>以下의 뉴런은 後<span style="color:Olive;font-weight:bold">索</span>의 안쪽 가까이에 있는 <span style="color:Olive;font-weight:bold">薄</span><span style="color:Olive;font-weight:bold">束</span>을 通<span style="color:Olive;font-weight:bold">過</span>한다.
+</p>
+
+<p>
+도청소재지는 <span style="color:DarkCyan;font-weight:bold">본</span><span style="color:DarkCyan;font-weight:bold">래</span> 광주광역시에 있었으나 최<span style="color:DarkCyan;font-weight:bold">근</span> 들어 <span style="color:DarkCyan;font-weight:bold">무</span>안<span style="color:DarkCyan;font-weight:bold">군</span>으로 옮겼다. <br />
+道廳所在地는 <span style="color:DarkRed;font-weight:bold">本</span><span style="color:DarkRed;font-weight:bold">來</span> 光州廣域市에 있었으나 最<span style="color:DarkRed;font-weight:bold">근</span> 들어 <span style="color:DarkRed;font-weight:bold">無</span>安<span style="color:DarkRed;font-weight:bold">軍</span>으로 옮겼다. <br />
+道廳所在地는 <span style="color:Olive;font-weight:bold">본</span><span style="color:Olive;font-weight:bold">래</span> 光州廣域市에 있었으나 最<span style="color:Olive;font-weight:bold">近</span> 들어 <span style="color:Olive;font-weight:bold">務</span>安<span style="color:Olive;font-weight:bold">郡</span>으로 옮겼다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">단</span>세포로 큰 것은 없고, 건<span style="color:DarkCyan;font-weight:bold">조</span>에 대해서는 휴<span style="color:DarkCyan;font-weight:bold">면</span>으로 참는 것 이외로는 없는 것 같다. <br />
+<span style="color:DarkRed;font-weight:bold">단</span>細胞로 큰 것은 없고, 乾<span style="color:DarkRed;font-weight:bold">조</span>에 對해서는 休<span style="color:DarkRed;font-weight:bold">面</span>으로 참는 것 以外로는 없는 것 같다. <br />
+<span style="color:Olive;font-weight:bold">單</span>細胞로 큰 것은 없고, 乾<span style="color:Olive;font-weight:bold">燥</span>에 對해서는 休<span style="color:Olive;font-weight:bold">眠</span>으로 참는 것 以外로는 없는 것 같다.
+</p>
+
+<p>
+도중 은<span style="color:DarkCyan;font-weight:bold">둔</span>지가 일본군에 발견되었지만, 일본의 경찰의 손끝이 되어 일하고 있던 친구에게, 반일분자<span style="color:DarkCyan;font-weight:bold">판</span>별의 검증으로 <span style="color:DarkCyan;font-weight:bold">적</span>성은 아니다고 여겨진 인물의 증명서인 「<span style="color:DarkCyan;font-weight:bold">양</span>민증」을 써 준 것으로 살아남았다. <br />
+途中 隱<span style="color:DarkRed;font-weight:bold">屯</span>地가 日本軍에 發見되었지만, 日本의 警察의 손끝이 되어 일하고 있던 親舊에게, 反日分子<span style="color:DarkRed;font-weight:bold">판</span>別의 檢證으로 <span style="color:DarkRed;font-weight:bold">적</span>性은 아니다고 여겨진 人物의 證明書인 「<span style="color:DarkRed;font-weight:bold">양</span>民證」을 써 준 것으로 살아남았다. <br />
+途中 隱<span style="color:Olive;font-weight:bold">遁</span>地가 日本軍에 發見되었지만, 日本의 警察의 손끝이 되어 일하고 있던 親舊에게, 反日分子<span style="color:Olive;font-weight:bold">判</span>別의 檢證으로 <span style="color:Olive;font-weight:bold">敵</span>性은 아니다고 여겨진 人物의 證明書인 「<span style="color:Olive;font-weight:bold">良</span>民證」을 써 준 것으로 살아남았다.
+</p>
+
+<p>
+원<span style="color:DarkCyan;font-weight:bold">소</span>(원<span style="color:DarkCyan;font-weight:bold">자</span>)로부터 구성되는 <span style="color:DarkCyan;font-weight:bold">고</span>체, <span style="color:DarkCyan;font-weight:bold">액</span>체 <span style="color:DarkCyan;font-weight:bold">혹</span>은 <span style="color:DarkCyan;font-weight:bold">기</span>체상태를 취하는 존재를 가리킨다. <br />
+元<span style="color:DarkRed;font-weight:bold">소</span>(原<span style="color:DarkRed;font-weight:bold">자</span>)로부터 構成되는 <span style="color:DarkRed;font-weight:bold">고</span>體, <span style="color:DarkRed;font-weight:bold">액</span>體 <span style="color:DarkRed;font-weight:bold">혹</span>은 <span style="color:DarkRed;font-weight:bold">기</span>體狀態를 取하는 存在를 가리킨다. <br />
+元<span style="color:Olive;font-weight:bold">素</span>(原<span style="color:Olive;font-weight:bold">子</span>)로부터 構成되는 <span style="color:Olive;font-weight:bold">固</span>體, <span style="color:Olive;font-weight:bold">液</span>體 <span style="color:Olive;font-weight:bold">或</span>은 <span style="color:Olive;font-weight:bold">氣</span>體狀態를 取하는 存在를 가리킨다.
+</p>
+
+<p>
+사우드가를 시작으로 하는 정부중추와 지배층은 [[<span style="color:DarkCyan;font-weight:bold">수</span>나<span style="color:DarkCyan;font-weight:bold">파</span>]](왓하브파는 수나파에 포함된다)이다. <br />
+사우드가를 始作으로 하는 政府中樞와 支配層은 [[<span style="color:DarkRed;font-weight:bold">數</span>나<span style="color:DarkRed;font-weight:bold">파</span>]](왓하브派는 수나派에 包含된다)이다. <br />
+사우드가를 始作으로 하는 政府中樞와 支配層은 [[<span style="color:Olive;font-weight:bold">수</span>나<span style="color:Olive;font-weight:bold">派</span>]](왓하브派는 수나派에 包含된다)이다.
+</p>
+
+<p>
+국<span style="color:DarkCyan;font-weight:bold">회</span> 타이의 국회는 상<span style="color:DarkCyan;font-weight:bold">하</span><span style="color:DarkCyan;font-weight:bold">이</span>원제의 의회제민주주의를 채택하고 있어, 그 실체는 랏타사<span style="color:DarkCyan;font-weight:bold">파</span>로 불린다. <br />
+國<span style="color:DarkRed;font-weight:bold">회</span> 타이의 國會는 上<span style="color:DarkRed;font-weight:bold">하</span><span style="color:DarkRed;font-weight:bold">이</span>院制의 議會制民主主義를 採擇하고 있어, 그 實體는 랏타사<span style="color:DarkRed;font-weight:bold">派</span>로 불린다. <br />
+國<span style="color:Olive;font-weight:bold">會</span> 타이의 國會는 上<span style="color:Olive;font-weight:bold">下</span><span style="color:Olive;font-weight:bold">二</span>院制의 議會制民主主義를 採擇하고 있어, 그 實體는 랏타사<span style="color:Olive;font-weight:bold">파</span>로 불린다.
+</p>
+
+<p>
+혀 표면각부를 중심으로 존재하는 <span style="color:DarkCyan;font-weight:bold">미</span><span style="color:DarkCyan;font-weight:bold">각</span><span style="color:DarkCyan;font-weight:bold">아</span>(봐들 있어)는, 맛 물질의 수용<span style="color:DarkCyan;font-weight:bold">기</span>이다. <br />
+혀 表面各部를 中心으로 存在하는 <span style="color:DarkRed;font-weight:bold">미</span><span style="color:DarkRed;font-weight:bold">각</span><span style="color:DarkRed;font-weight:bold">아</span>(봐들 있어)는, 맛 物質의 受容<span style="color:DarkRed;font-weight:bold">期</span>이다. <br />
+혀 表面各部를 中心으로 存在하는 <span style="color:Olive;font-weight:bold">味</span><span style="color:Olive;font-weight:bold">覺</span><span style="color:Olive;font-weight:bold">芽</span>(봐들 있어)는, 맛 物質의 受容<span style="color:Olive;font-weight:bold">器</span>이다.
+</p>
+
+<p>
+이 체제는 창간<span style="color:DarkCyan;font-weight:bold">호</span>로부터 일관해서 변하지 않지만, 예외가 2개 있다. <br />
+이 體制는 創刊<span style="color:DarkRed;font-weight:bold">護</span>로부터 一貫해서 變하지 않지만, 例外가 2個 있다. <br />
+이 體制는 創刊<span style="color:Olive;font-weight:bold">號</span>로부터 一貫해서 變하지 않지만, 例外가 2個 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">배</span><span style="color:DarkCyan;font-weight:bold">설</span>된지 얼마 안된 오즘은 무<span style="color:DarkCyan;font-weight:bold">균</span>이며, 흙이나 <span style="color:DarkCyan;font-weight:bold">진</span>흙을 상처에 붙인 채로 하는 것보다 아득하게 <span style="color:DarkCyan;font-weight:bold">위</span>생적이다. <br />
+<span style="color:DarkRed;font-weight:bold">배</span><span style="color:DarkRed;font-weight:bold">設</span>된지 얼마 안된 오즘은 無<span style="color:DarkRed;font-weight:bold">均</span>이며, 흙이나 <span style="color:DarkRed;font-weight:bold">進</span>흙을 傷處에 붙인 채로 하는 것보다 아득하게 <span style="color:DarkRed;font-weight:bold">위</span>生的이다. <br />
+<span style="color:Olive;font-weight:bold">排</span><span style="color:Olive;font-weight:bold">泄</span>된지 얼마 안된 오즘은 無<span style="color:Olive;font-weight:bold">菌</span>이며, 흙이나 <span style="color:Olive;font-weight:bold">진</span>흙을 傷處에 붙인 채로 하는 것보다 아득하게 <span style="color:Olive;font-weight:bold">衛</span>生的이다.
+</p>
+
+<p>
+1997년 <span style="color:DarkCyan;font-weight:bold">현</span>시장선거에서는 민진당은 12<span style="color:DarkCyan;font-weight:bold">현</span><span style="color:DarkCyan;font-weight:bold">시</span>에서 승리했지만, <span style="color:DarkCyan;font-weight:bold">대</span>북시장선거에서는 2기째를 목표로 하는 <span style="color:DarkCyan;font-weight:bold">진</span><span style="color:DarkCyan;font-weight:bold">수</span><span style="color:DarkCyan;font-weight:bold">편</span>은, 청렴한 이미지로 선거전략를 전개했지만, <span style="color:DarkCyan;font-weight:bold">이</span><span style="color:DarkCyan;font-weight:bold">등</span>휘에 의해 신대만인이라고 평가된 <span style="color:DarkCyan;font-weight:bold">마</span>영<span style="color:DarkCyan;font-weight:bold">구</span>에 졌다. <br />
+1997年 <span style="color:DarkRed;font-weight:bold">現</span>市長選擧에서는 民進黨은 12<span style="color:DarkRed;font-weight:bold">現</span><span style="color:DarkRed;font-weight:bold">時</span>에서 勝利했지만, <span style="color:DarkRed;font-weight:bold">對</span>北市長選擧에서는 2期째를 目標로 하는 <span style="color:DarkRed;font-weight:bold">進</span><span style="color:DarkRed;font-weight:bold">數</span><span style="color:DarkRed;font-weight:bold">편</span>은, 淸廉한 이미지로 選擧戰略를 展開했지만, <span style="color:DarkRed;font-weight:bold">이</span><span style="color:DarkRed;font-weight:bold">等</span>輝에 依해 新臺灣人이라고 評價된 <span style="color:DarkRed;font-weight:bold">마</span>英<span style="color:DarkRed;font-weight:bold">구</span>에 졌다. <br />
+1997年 <span style="color:Olive;font-weight:bold">縣</span>市長選擧에서는 民進黨은 12<span style="color:Olive;font-weight:bold">縣</span><span style="color:Olive;font-weight:bold">市</span>에서 勝利했지만, <span style="color:Olive;font-weight:bold">臺</span>北市長選擧에서는 2期째를 目標로 하는 <span style="color:Olive;font-weight:bold">陳</span><span style="color:Olive;font-weight:bold">水</span><span style="color:Olive;font-weight:bold">扁</span>은, 淸廉한 이미지로 選擧戰略를 展開했지만, <span style="color:Olive;font-weight:bold">李</span><span style="color:Olive;font-weight:bold">登</span>輝에 依해 新臺灣人이라고 評價된 <span style="color:Olive;font-weight:bold">馬</span>英<span style="color:Olive;font-weight:bold">九</span>에 졌다.
+</p>
+
+<p>
+특히, 화학<span style="color:DarkCyan;font-weight:bold">조</span>성과 <span style="color:DarkCyan;font-weight:bold">정</span><span style="color:DarkCyan;font-weight:bold">계</span>만으로는 특징을 잡기 어려운 <span style="color:DarkCyan;font-weight:bold">규</span><span style="color:DarkCyan;font-weight:bold">산</span><span style="color:DarkCyan;font-weight:bold">염</span><span style="color:DarkCyan;font-weight:bold">광</span>물등에서는 일반적으로 사용되는 분류이다. <br />
+特히, 化學<span style="color:DarkRed;font-weight:bold">조</span>成과 <span style="color:DarkRed;font-weight:bold">政</span><span style="color:DarkRed;font-weight:bold">界</span>만으로는 特徵을 잡기 어려운 <span style="color:DarkRed;font-weight:bold">規</span><span style="color:DarkRed;font-weight:bold">山</span><span style="color:DarkRed;font-weight:bold">炎</span><span style="color:DarkRed;font-weight:bold">光</span>物等에서는 一般的으로 使用되는 分類이다. <br />
+特히, 化學<span style="color:Olive;font-weight:bold">組</span>成과 <span style="color:Olive;font-weight:bold">晶</span><span style="color:Olive;font-weight:bold">系</span>만으로는 特徵을 잡기 어려운 <span style="color:Olive;font-weight:bold">硅</span><span style="color:Olive;font-weight:bold">酸</span><span style="color:Olive;font-weight:bold">鹽</span><span style="color:Olive;font-weight:bold">鑛</span>物等에서는 一般的으로 使用되는 分類이다.
+</p>
+
+<p>
+많은 <span style="color:DarkCyan;font-weight:bold">도</span><span style="color:DarkCyan;font-weight:bold">서</span>관에 놓여진다. <br />
+많은 <span style="color:DarkRed;font-weight:bold">도</span><span style="color:DarkRed;font-weight:bold">서</span>館에 놓여진다. <br />
+많은 <span style="color:Olive;font-weight:bold">圖</span><span style="color:Olive;font-weight:bold">書</span>館에 놓여진다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">자</span><span style="color:DarkCyan;font-weight:bold">극</span>의 종류에 따르고, 대응하는 감각<span style="color:DarkCyan;font-weight:bold">기</span><span style="color:DarkCyan;font-weight:bold">관</span>이나 생기는 감각을 나눌 수 있다. <br />
+<span style="color:DarkRed;font-weight:bold">자</span><span style="color:DarkRed;font-weight:bold">極</span>의 種類에 따르고, 對應하는 感覺<span style="color:DarkRed;font-weight:bold">機</span><span style="color:DarkRed;font-weight:bold">關</span>이나 생기는 感覺을 나눌 수 있다. <br />
+<span style="color:Olive;font-weight:bold">刺</span><span style="color:Olive;font-weight:bold">戟</span>의 種類에 따르고, 對應하는 感覺<span style="color:Olive;font-weight:bold">器</span><span style="color:Olive;font-weight:bold">官</span>이나 생기는 感覺을 나눌 수 있다.
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">무</span><span style="color:DarkCyan;font-weight:bold">척</span><span style="color:DarkCyan;font-weight:bold">추</span>동물 <br />
+<span style="color:DarkRed;font-weight:bold">무</span><span style="color:DarkRed;font-weight:bold">척</span><span style="color:DarkRed;font-weight:bold">추</span>動物 <br />
+<span style="color:Olive;font-weight:bold">無</span><span style="color:Olive;font-weight:bold">脊</span><span style="color:Olive;font-weight:bold">椎</span>動物
+</p>
+
+<p>
+<span style="color:DarkCyan;font-weight:bold">나</span><span style="color:DarkCyan;font-weight:bold">자</span>식물이 <span style="color:DarkCyan;font-weight:bold">단</span><span style="color:DarkCyan;font-weight:bold">계</span>통<span style="color:DarkCyan;font-weight:bold">일</span>까 측계통<span style="color:DarkCyan;font-weight:bold">일</span>까에 대해서는, 분자계통학이 발달한 오늘이라도 양쪽 모두의 입장이 있어, 대답이 나와 있지 않다. <br />
+<span style="color:DarkRed;font-weight:bold">나</span><span style="color:DarkRed;font-weight:bold">자</span>植物이 <span style="color:DarkRed;font-weight:bold">段</span><span style="color:DarkRed;font-weight:bold">階</span>統<span style="color:DarkRed;font-weight:bold">一</span>까 側系統<span style="color:DarkRed;font-weight:bold">一</span>까에 對해서는, 分子系統學이 發達한 오늘이라도 兩쪽 모두의 立場이 있어, 對答이 나와 있지 않다. <br />
+<span style="color:Olive;font-weight:bold">裸</span><span style="color:Olive;font-weight:bold">子</span>植物이 <span style="color:Olive;font-weight:bold">單</span><span style="color:Olive;font-weight:bold">系</span>統<span style="color:Olive;font-weight:bold">일</span>까 側系統<span style="color:Olive;font-weight:bold">일</span>까에 對해서는, 分子系統學이 發達한 오늘이라도 兩쪽 모두의 立場이 있어, 對答이 나와 있지 않다.
+</p>
+
+<p>
+이것은, 그가 그 몇 연전부터 가다듬고 있던 <span style="color:DarkCyan;font-weight:bold">안</span>의 집대<span style="color:DarkCyan;font-weight:bold">성</span>이었다. <br />
+이것은, 그가 그 몇 年前부터 가다듬고 있던 <span style="color:DarkRed;font-weight:bold">안</span>의 集大<span style="color:DarkRed;font-weight:bold">性</span>이었다. <br />
+이것은, 그가 그 몇 年前부터 가다듬고 있던 <span style="color:Olive;font-weight:bold">案</span>의 集大<span style="color:Olive;font-weight:bold">成</span>이었다.
+</p>
+
+<p>
+물질의 <span style="color:DarkCyan;font-weight:bold">성</span>분이 동일해도 화학구조의 차이에 의해 다른 화학물질이 된다. <br />
+物質의 <span style="color:DarkRed;font-weight:bold">성</span>分이 同一해도 化學構造의 差異에 依해 다른 化學物質이 된다. <br />
+物質의 <span style="color:Olive;font-weight:bold">成</span>分이 同一해도 化學構造의 差異에 依해 다른 化學物質이 된다.
+</p>
+
+<p>
+남<span style="color:DarkCyan;font-weight:bold">반</span><span style="color:DarkCyan;font-weight:bold">구</span>에서의 <span style="color:DarkCyan;font-weight:bold">일</span><span style="color:DarkCyan;font-weight:bold">주</span>운동은, 북<span style="color:DarkCyan;font-weight:bold">반</span><span style="color:DarkCyan;font-weight:bold">구</span>에서의 운동과는 북쪽과 남쪽, 또 왼쪽 오른쪽이 바뀐 움직임이 된다. <br />
+南<span style="color:DarkRed;font-weight:bold">반</span><span style="color:DarkRed;font-weight:bold">區</span>에서의 <span style="color:DarkRed;font-weight:bold">一</span><span style="color:DarkRed;font-weight:bold">主</span>運動은, 北<span style="color:DarkRed;font-weight:bold">반</span><span style="color:DarkRed;font-weight:bold">區</span>에서의 運動과는 北쪽과 南쪽, 또 왼쪽 오른쪽이 바뀐 움직임이 된다. <br />
+南<span style="color:Olive;font-weight:bold">半</span><span style="color:Olive;font-weight:bold">球</span>에서의 <span style="color:Olive;font-weight:bold">日</span><span style="color:Olive;font-weight:bold">周</span>運動은, 北<span style="color:Olive;font-weight:bold">半</span><span style="color:Olive;font-weight:bold">球</span>에서의 運動과는 北쪽과 南쪽, 또 왼쪽 오른쪽이 바뀐 움직임이 된다.
+</p>
+
+<p>
+또, 이성적으로 살기 위해서는, 중<span style="color:DarkCyan;font-weight:bold">용</span>을 지키는 것이 중요하다라고도 말했다. <br />
+또, 理性的으로 살기 爲해서는, 中<span style="color:DarkRed;font-weight:bold">用</span>을 지키는 것이 重要하다라고도 말했다. <br />
+또, 理性的으로 살기 爲해서는, 中<span style="color:Olive;font-weight:bold">庸</span>을 지키는 것이 重要하다라고도 말했다.
+</p>
+
+<p>
+같은 <span style="color:DarkCyan;font-weight:bold">진</span><span style="color:DarkCyan;font-weight:bold">폭</span>의 물결이 반<span style="color:DarkCyan;font-weight:bold">사</span>된다. <br />
+같은 <span style="color:DarkRed;font-weight:bold">進</span><span style="color:DarkRed;font-weight:bold">爆</span>의 물결이 反<span style="color:DarkRed;font-weight:bold">사</span>된다. <br />
+같은 <span style="color:Olive;font-weight:bold">振</span><span style="color:Olive;font-weight:bold">幅</span>의 물결이 反<span style="color:Olive;font-weight:bold">射</span>된다.
+</p>
+
+</body></html>
