@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import argparse
 from collections import defaultdict
 import multiprocessing
 import numpy as np
@@ -7,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
 
 from stanza.monitoring import progress
-from stanza.research import config
+from stanza.research import config, instance
 from stanza.research.learner import Learner
 
 import kengdict
@@ -15,6 +16,7 @@ import kengdict
 
 class ClassifierLearner(Learner):
     def __init__(self):
+        self.get_options()
         self.classifiers = {}
         self.label_dicts = {}
         self.singletons = {}
@@ -66,15 +68,18 @@ class ClassifierLearner(Learner):
             total += np.prod(model.coef_.shape) + np.prod(model.intercept_.shape)
         return total
 
-    def predict_and_score(self, eval_instances):
-        print('Featurizing')
-        features, _, indices = self.data_to_arrays(eval_instances)
+    def predict_and_score(self, eval_instances, random='ignored', verbosity=4):
+        if verbosity >= 1:
+            print('Featurizing')
+        features, _, indices = self.data_to_arrays(eval_instances, verbosity=verbosity)
         pred_labels = {}
 
-        print('Predicting')
-        progress.start_task('Character', len(features))
+        if verbosity >= 1:
+            print('Predicting')
+            progress.start_task('Character', len(features))
         for i, hangul in enumerate(features):
-            progress.progress(i)
+            if verbosity >= 1:
+                progress.progress(i)
 
             if hangul in self.classifiers:
                 model, vec, enc = self.classifiers[hangul]
@@ -85,7 +90,8 @@ class ClassifierLearner(Learner):
                 pred_labels[hangul] = [self.singletons[hangul]] * len(features[hangul])
             else:
                 pred_labels[hangul] = [hangul] * len(features[hangul])
-        progress.end_task()
+        if verbosity >= 1:
+            progress.end_task()
 
         predictions = []
         scores = []
@@ -97,18 +103,21 @@ class ClassifierLearner(Learner):
             scores.append(score)
         return predictions, scores
 
-    def data_to_arrays(self, insts):
-        options = config.options()
-
-        worker_pool = multiprocessing.Pool(options.featurization_threads)
+    def data_to_arrays(self, insts, verbosity=4):
+        worker_pool = multiprocessing.Pool(self.options.featurization_threads)
 
         features = defaultdict(list)
         labels = defaultdict(list)
         indices = []
-        progress.start_task('Sentence', len(insts))
+        if verbosity >= 1:
+            progress.start_task('Sentence', len(insts))
         for i, inst in enumerate(insts):
-            progress.progress(i)
+            if verbosity >= 1:
+                progress.progress(i)
 
+            if inst.output is None:
+                inst = instance.Instance(**inst.__dict__)
+                inst.output = inst.input
             assert len(inst.input) == len(inst.output), inst.__dict__
             indices_inst = []
             featurizer_args = []
@@ -119,15 +128,21 @@ class ClassifierLearner(Learner):
                     classes = []
 
                 indices_inst.append(len(labels[hangul]))
-                featurizer_args.append((inst.input, j, classes, options.features))
+                featurizer_args.append((inst.input, j, classes, self.options.features))
                 labels[hangul].append(hanja)
 
             for hangul, feats in worker_pool.map(featurize, featurizer_args):
                 features[hangul].append(feats)
 
             indices.append(indices_inst)
-        progress.end_task()
+        if verbosity >= 1:
+            progress.end_task()
         return features, labels, indices
+
+    def get_options(self):
+        if not hasattr(self, 'options'):
+            options = config.options()
+            self.options = argparse.Namespace(**options.__dict__)
 
 
 def featurize(args):
