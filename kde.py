@@ -76,7 +76,7 @@ if __name__ == '__main__':
     dataset = [(fix(k), fix(c)) for k, c in dataset]
 
     dataset = [p for p in dataset if score(p[0]) != 0]
-    with open('data/dataset.p', 'wb') as outfile:
+    with open('data/dataset.pkl', 'wb') as outfile:
             cp.dump(dataset, outfile)
 
     uprint('Sample pairs:')

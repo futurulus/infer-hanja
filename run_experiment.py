@@ -64,7 +64,7 @@ def main():
             learner.load(infile)
     else:
         learner.train(train_data, validation_data, metrics=m)
-        with open(config.get_file_path('model.p'), 'wb') as outfile:
+        with open(config.get_file_path('model.pkl'), 'wb') as outfile:
             learner.dump(outfile)
 
         train_results = evaluate.evaluate(learner, train_data, metrics=m, split_id='train',
